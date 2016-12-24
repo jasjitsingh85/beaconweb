@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hotspot</title>
+    <meta charset="utf8">
+    <meta name="apple-itunes-app" content="app-id=737629048">
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/application.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/hotspot-detail-deals.css" />
+
+   <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+   <script src="{{ STATIC_URL }}js/jquery.hammer.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.simple-countdown.js"></script>
+   <script src="{{ STATIC_URL }}js/jquery.transit.js"></script>
+   <script src="{{ STATIC_URL }}js/fastclick.js"></script>
+   <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9pd7fq6gEOxwuHDTItdwOfm4OdQ5kRWI&sensor=true">
+   </script>
+
+   <script src="{{ STATIC_URL }}js/hotspot.js"></script>
+   <script src="{{ STATIC_URL }}js/hotspot_detail_deal.js"></script>
+
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+    b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("5ef90c03d9e72b7e1f460600d47de6ab");</script>
+    <!-- end Mixpanel -->
+
+
+</head>
+<body>
+    <div class="loading-container">
+      <img class="loading" src="{{ STATIC_URL }}img/main-spinner.gif" />
+    </div>
+    <div class="main-container">
+        <div class="hotspot-header">
+          <div class="notification-container">
+{#            <span class="notifications">#}
+{#              <span class="notification-number"></span>#}
+{#              <img class="notification-spinner" src="/images/notification-spinner.gif" />#}
+{#            </span>#}
+          </div>
+          <div class="logo-container">
+            <img class="header-logo" src="{{ STATIC_URL }}img/hotspot-mobile-logo.png" />
+          </div>
+        </div>
+    <div class="main-detail-container">
+      <div class="map-and-info">
+          <div class="deal-image" style="background-image:url({{ deal_status.deal.place.image_url }})">
+          </div>
+          <div class="preview-top-container">
+            <div class="preview-top">
+              <span class="time"></span>
+              <span class="description"></span>
+            </div>
+              <div class="bottom-shadow">
+
+              </div>
+{#            <img class="bottom-shadow" src="{{ STATIC_URL }}img/map-bottom-shadow.png"/>#}
+          </div>
+          <div class="preview-bottom-container">
+            <div class="hotspot-button join-button">
+                Join
+            </div>
+            <div class="preview-bottom">
+              <a class="hotspot-location" href=""><span class="address"></span><span class="distance"></span></a>
+              <span class="guests"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-and-guests-container">
+          <div class="nav">
+          <div class="deal-tab">
+            <img class="tab-image" src="{{ STATIC_URL }}img/dealButtonSelected.png"/>
+          </div>
+          <div class="chat-tab">
+            <img class="tab-image" src="{{ STATIC_URL }}img/chatButtonNormal@2x.png"/>
+          </div>
+          <div class="guest-tab active">
+            <img class="tab-image" src="{{ STATIC_URL }}img/invitedButtonNormal@2x.png"/>
+          </div>
+          </div>
+
+          <div class="chat-and-guests">
+            <div class="deal-list">
+                <div class="time-container">
+                    <span class="time-heading">Expires in:</span>
+                    <span class="time-body">2:02:37</span>
+                </div>
+                <div class="deal-info">
+                    <span class="deal-info-header">Here's the deal:</span>
+                    <span class="deal-info-body">{{ deal_status.deal.invite_description }}</span>
+                </div>
+                <div class="redeem-container">
+                    <span>When you arrive at {{ deal_status.deal.place.name }}, show this to the staff</span>
+                    {% if deal_status.deal_status == 'U' %}
+                        <img class="redeem-button" src="{{ STATIC_URL }}img/redeemButtonActive.png">
+                    {% else %}
+                        <img class="redeem-button" src="{{ STATIC_URL }}img/redeemButtonInactive.png">
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="chat-list">
+              <div id="wrapper">
+                <ul class="message-thread">
+                </ul>
+              </div>
+              <div class="send-message-container">
+{#                <img class="picture-message" src="{{ STATIC_URL }}img/cameraSmall@2x.png" />#}
+                <form id="send-message">
+                  <input class="send-message-box" placeholder="Send a Group Message" type="text"/>
+                </form>
+              </div>
+            </div>
+
+            <div class="guest-list">
+              <div id="guest-list-container">
+                <ul class="guest-thread">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var contact_phone;
+    var d = "{{ deal_status.start }}";
+    var dealID = {{ deal_status.id }};
+    if ("{{ contact.normalized_phone }}"==="") {
+        contact_phone = -1;
+    } else {
+        contact_phone = "{{ contact.normalized_phone }}";
+    }
+    var docURL = document.URL;
+    var url;
+    if (docURL.indexOf("localhost") !== -1) {
+      url = "http://localhost:8000/";
+    } else if (docURL.indexOf("localhost") !== -1) {
+      url = "http://hotspotapp-staging.herokuapp.com/"
+    } else {
+      url = "http://mighty-reef-7102.herokuapp.com/";
+    }
+
+    hotspot.init({{ beacon_follow_id }}, {{ beacon.id }}, url, contact_phone);
+    hotspot.sawInvite(function(success){
+        console.log("User saw invite");
+    });
+
+    $(document).ready(function(){
+         if (url === "http://www.gethotspotapp.com/") {
+            mixpanel.register({
+                name: "{{ contact.name }}",
+                phone: contact_phone
+          });
+          mixpanel.track("mobile_app_foreground", {
+                description: "{{ beacon.description }}",
+                time: "{{ beacon.time }}",
+                place: "{{ beacon.address }}"
+
+          });
+
+            mixpanel.track_links("#getDirections", "mobile_get_directions");
+         }
+    });
+
+</script>

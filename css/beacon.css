@@ -1,0 +1,172 @@
+body {
+	height:100%;
+	width:100%;
+	font-family:'Lato', sans-serif;
+}
+
+h1 {
+  font-size: 44px;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.2/scss/foundation/common/_typography.scss */
+h2 {
+  font-size: 37px;
+}
+
+/* line 29, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.2/scss/foundation/common/_typography.scss */
+h3 {
+  font-size: 27px;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.2/scss/foundation/common/_typography.scss */
+h4 {
+  font-size: 23px;
+}
+
+/* line 31, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.2/scss/foundation/common/_typography.scss */
+h5 {
+  font-size: 17px;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.2/scss/foundation/common/_typography.scss */
+h6 {
+  font-size: 14px;
+}
+
+#beacon-map {
+	display:block;
+	width:100%;
+	/*height:300px;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index:1;
+}
+
+#beacon-info {
+	position:relative;
+	border:1px solid #b1b1b1;
+	top:10px;
+	padding:10px;
+	left:0px;
+	height:170px;
+	width:280px;
+	z-index:10;
+	background: #fafafa;
+	border-radius:5px;
+}
+
+#beacon-headline {
+	display:block;
+	margin-top:5px;
+	margin-left:20px;
+	font-size:20px;
+	font-weight:bolder;
+	color: #ff763c;
+	text-shadow: 1px 1px rgba(255,255,255,.35);
+}
+
+#host-pic {
+	height:35px;
+	width:35px;
+	border-radius:50%;
+	float:left;
+}
+
+#host-name {
+	font-weight: bold;
+	color: #606060;
+	font-size:15px;
+	margin-left:8px;
+	float:left;
+	padding-bottom:15px;
+	margin-top: 10px;
+}
+
+#beacon-info-headline {
+	display:block;
+	width:100%;
+}
+
+#imIn {
+	display:none;
+	float:right;
+	width: 66px;
+	color:#FFFFFF;
+	height: 31px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #75ccd0;
+	-webkit-box-shadow: 0 1px 2px rgba(102,101,101,.74), inset 0 1px 2px #fa8d5e;
+	-moz-box-shadow: 0 1px 2px rgba(102,101,101,.74), inset 0 1px 2px #fa8d5e;
+	box-shadow: 0 1px 2px rgba(102,101,101,.74), inset 0 1px 2px #fa8d5e;
+	border: solid 1px #fa753d;
+	background-image: -webkit-linear-gradient(bottom, #e0592b, #f3723b 99%);
+	background-image: -moz-linear-gradient(bottom, #e0592b, #f3723b 99%);
+	background-image: -o-linear-gradient(bottom, #e0592b, #f3723b 99%);
+	background-image: -ms-linear-gradient(bottom, #e0592b, #f3723b 99%);
+	background-image: linear-gradient(to top, #e0592b, #f3723b 99%);
+}
+
+#beacon-location {
+	font-size: 14px;
+	font-weight: bold;
+	color: #5d5d5d;
+	text-shadow: 1px 1px rgba(255,255,255,.35);
+}
+
+#beacon-time {
+	font-size: 14px;
+	font-weight: bold;
+	color: #5d5d5d;
+	text-shadow: 1px 1px rgba(255,255,255,.35);
+}
+
+#beacon-buttons {
+	padding-left:5px;
+	margin-top:0px;
+}
+
+#beacon-buttons li {
+	display:inline-block;
+	list-style-type:none;
+	margin:0px 30px;
+	cursor:pointer;
+}
+
+#beacon-buttons li img {
+	font-size: 10px;
+	font-weight: bolder;
+	color: #373737;
+	text-shadow: 1px 2px #fff;
+	height:30px;
+	width:30px;
+	display:block;
+	margin:0px auto;
+}
+
+#beacon-buttons li span {
+	font-size: 10px;
+	font-weight: bolder;
+	color: #373737;
+	text-shadow: 1px 2px #fff;
+}
+
+.small-icons {
+	width:14px;
+	height:14px;
+}
+
+#beacon-details {
+	padding-left:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#beacon-details li {
+	display:inline;
+	margin-right:15px;
+}

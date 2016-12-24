@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- <link rel="stylesheet" href="../../../static/css/bootstrap.css" />-->
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/feedback.css" />
+    <title>Hotspot Feedback {{feedback_id}}</title>
+</head>
+
+<body align=center, style="margin:2rem;text-align:center">
+    <div class="container primary">
+        <div class="row row-centered">
+            <form action=/feedback/{{feedback_id}}/submit/ method="post" class="col-xs-12 col-sm-9 col-lg-8 col-centered">
+                {% csrf_token %}
+                <h3 id="thanks">Thanks for your response! We'd love to get a little feedback</h3>
+                <div class="form-group">
+                    <label for={{form.general.id_for_label}}>What did you think of the event?</label>
+                    {{form.general}}
+                </div>
+                <div class="form-group">
+                    <label for={{form.source.id_for_label}}>Where did you first hear about the event?</label>
+                    {{form.source}}
+                </div>
+                <div class="form-group">
+                    <label for={{form.frequency.id_for_label}}>How frequently would you want to attend an event like this in the future?</label>
+                    {{form.frequency}}
+                </div>
+                <div class="form-group">
+                    <label for={{form.improvements.id_for_label}}>Anything you'd like to see changed for the next one?</label>
+                    {{form.improvements}}
+                </div>
+                <div class="center-block">
+                    <button type="submit" class="btn btn-default" id="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+
+<!--<body align=center, style="margin:2rem;text-align:center">
+    <div class="container primary">
+        <div class="row row-centered">
+            <form action=/feedback/{{feedback_id}}/submit/ method="post" class="col-xs-12 col-sm-9 col-lg-8 col-centered">
+                {% csrf_token %}
+                <h3 id="thanks">Thanks for your response! We'd love to get a little feedback</h3>
+                <div class="form-group">
+                    <label for="eventGeneralFeedback">What did you think of the event?</label>
+                    <textarea class="form-control" rows="3" id="eventGeneralFeedback" placeholder="feedback" value="..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="referralSource">Where did you first hear about the event?</label>
+                    <select class="form-control" id="referralSource">
+                        <option selected="selected" disabled="disabled">...</option>
+                        <option>Facebook</option>
+                        <option>Email</option>
+                        <option>From a friend</option>
+                        <option>Got a notification on my phone</option>
+                        <option>Saw in the app</option>
+                        <option>Found out at the venue</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="repeatLikelihood">How frequently would you want to attend an event like this in the future?</label>
+                    <select class="form-control" id="repeatLikelihood">
+                        <option selected="selected" disabled="disabled">...</option>
+                        <option>Never</option>
+                        <option>A couple times a year</option>
+                        <option>Once a month</option>
+                        <option>A couple times a month</option>
+                        <option>Once a week</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="suggestedImprovements">Anything you'd like to see changed for the next one?</label>
+                    <textarea class="form-control" rows="3" id="suggestedImprovements" placeholder="feedback" value="..."></textarea>
+                </div>
+                <div class="center-block">
+                    <button type="submit" class="btn btn-default" id="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>-->
+</html>
+

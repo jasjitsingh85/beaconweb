@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-itunes-app" content="app-id=737629048">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Best Drink Prices at the Hottest Bars: Download the Hotspot App & Get Free Drinks!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css"/>
+
+    <!--Custom Styles-->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/meta-bootstrap.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css"/>
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+    mixpanel.init("01e9b8afa8ea8881e819e4f605284799");</script>
+    <!-- end Mixpanel -->
+
+    <!-- Custom JS -->
+    <script>
+
+        var docURL = document.URL;
+        var base_url;
+        if (docURL.indexOf("gethotspotapp") !== -1) {
+            base_url = "http://www.gethotspotapp.com/";
+            mixpanel.track("splash_page_load");
+        } else {
+          base_url = "http://hotspotapp-staging.herokuapp.com/";
+        }
+
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.location.href = "https://itunes.apple.com/us/app/hotspot-meet-up-with-friends/id737629048?ls=1&mt=8";
+        } else if (/Android/i.test(navigator.userAgent)) {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.hotspot";
+        }
+
+        var url = window.location.host === "localhost" ? "http://localhost:8000/" : "http://www.gethotspotapp.com/";
+    </script>
+    <!-- End Custom JS -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- Header -->
+<header class="img-background metabootstrap-demo bg-cover bs-layout">
+    <!-- TOP NAV BLOCK -->
+    <nav class="top-nav-block hidden-xs pvx"><div class="container">
+        <div class="navbar navbar-clear">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <img class="logo" src="{{ STATIC_URL }}images/hotspot-logo-white.png" alt="Hotspot Logo">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><a href="#" class="Light menu-link">Press</a></li>-->
+                        <li>
+                            <a href="mailto:info@gethotspotapp.com" class="Light menu-link">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </nav>
+    <!-- END TOP NAV BLOCK -->
+
+    <!-- LEFT-ALIGNED HERO -->
+    <div class="container">
+        <div class="hero-section wow fadeIn left-aligned-hero row ptxl pbxxl">
+            <div class="col-sm-12 col-md-7 text-white text-left">
+                <h1 class="text-inverse dark-text-glow line-height-1-5">
+                    <strong>THE BEST PRICES</strong><br>
+                    <span class="Light">AT THE HOTTEST BARS</span>
+                </h1>
+                <p class="lead mtl dark-text-glow Light text-ddd">
+                    Hotspot gives you and your friends access to the best events and drink specials around town.
+                </p>
+                <p class="mtl">
+                    <button class="btn btn-primary dark-box-shadow Medium Mln" style="margin-left:0" data-toggle="modal" data-target="#SMSModal">
+                        DOWNLOAD THE APP
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End Header -->
+
+<!-- Offers & Events Section -->
+<section class="bg-white pbn ptx">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 wow fadeIn display-table">
+                <div class="pull-middle text-right ptx content-item">
+                    <img class="float-right hidden-xs hidden-sm plx mtx calendar-icon" src="{{ STATIC_URL }}images/calendar.png" alt="Calendar icon"/>
+                    <h2 class="text-md-right text-xs-center ptl">
+                        <strong>EXCLUSIVE</strong><br>
+                        <span class="Light">OFFERS & EVENTS</span>
+                    </h2>
+                    <div class="clear-both"></div>
+                    <p class="lead ptm text-xs-center text-md-right">
+                        From $10 Open Bars to $2 craft beers, always get the best prices at Hotspot partner bars.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5 wow fadeInUp phx position-relative overflow-hidden text-xs-center text-md-left">
+                <img src="{{ STATIC_URL }}images/i1e-min.png" alt="App Screenshot" class="iphone"/>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Offers & Events Section-->
+
+<!--Pay with your Phone Section-->
+<section class="pbn ptx text-white bg-hs-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 wow fadeInUp hidden-xs hidden-sm phx position-relative overflow-hidden text-xs-center text-md-right">
+                <img src="{{ STATIC_URL }}images/i2e-min.png" alt="App Screenshot" class="iphone"/>
+            </div>
+            <div class="col-md-7 wow fadeIn display-table">
+                <div class="pull-middle pts-xs pts-sm pbx-xs pbx-sm ptxl content-item">
+                    <img class="float-left hidden-xs hidden-sm prx mtx pay-icon" src="{{ STATIC_URL }}images/pay.png" alt="Pay icon"/>
+                    <h2 class="text-md-left text-xs-center ptl">
+                        <strong>PAY WITH</strong><br>
+                        <span class="Light">YOUR PHONE</span>
+                    </h2>
+                    <div class="clear-both"></div>
+                    <p class="lead ptm text-xs-center text-md-left text-ddd">
+                        Don’t wait for the check. Open, view and pay your tab through Hotspot at select venues.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Pay with your Phone Section-->
+
+<!--Check in with Friends Section-->
+<section class="bg-white pbn ptx">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 wow fadeIn display-table">
+                <div class="pull-middle text-right ptx content-item">
+                    <img class="float-right hidden-xs hidden-sm plx mtx users-icon" src="{{ STATIC_URL }}images/users.png" alt="Users icon"/>
+                    <h2 class="text-md-right text-xs-center ptl">
+                        <strong>CHECK IN</strong><br>
+                        <span class="Light">WITH FRIENDS</span>
+                    </h2>
+                    <div class="clear-both"></div>
+                    <p class="lead ptm text-xs-center text-md-right">
+                        Get the party started. Let your friends know where you’re headed so they can join.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5 wow fadeInUp phx position-relative overflow-hidden text-xs-center text-md-left">
+                <img src="{{ STATIC_URL }}images/i3e-min.png" alt="App Screenshot" class="iphone"/>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Check in with Friends Section-->
+
+<!--News & Info Section-->
+<section class="pbn ptx text-white bg-hs-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 wow fadeInUp hidden-xs hidden-sm phx position-relative overflow-hidden text-xs-center text-md-right">
+                <img src="{{ STATIC_URL }}images/i4e-min.png" alt="App Screenshot" class="iphone"/>
+            </div>
+            <div class="col-md-7 wow fadeIn display-table">
+                <div class="pull-middle pts-xs pts-sm pbx-xs pbx-sm ptxl content-item">
+                    <img class="float-left hidden-xs hidden-sm prx mtx news-icon" src="{{ STATIC_URL }}images/news.png" alt="News icon"/>
+                    <h2 class="text-md-left text-xs-center ptl">
+                        <strong>GET</strong><br>
+                        <span class="Light">NEWS & INFO</span>
+                    </h2>
+                    <div class="clear-both"></div>
+                    <p class="lead ptm text-xs-center text-md-left text-ddd">
+                        Never miss out at your favorite places. See every event and update from the places you follow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End News & Info Section-->
+
+<!--Footer-->
+<footer class="ptx pbl bg-white">
+    <div class="container">
+        <div class="row nudge-down-6">
+            <div class="col-md-6 text-xs-center text-md-left">
+                <a href="https://itunes.apple.com/us/app/hotspot-meet-up-with-friends/id737629048?ls=1&mt=8"><img src="{{ STATIC_URL }}images/app-store.png" style="height:45px" alt="Available in the App Store"/></a>
+                <a href="https://play.google.com/store/apps/details?id=com.hotspot"><img src="{{ STATIC_URL }}images/android.png" class="mlm" style="height:45px" alt="Available for Android"/></a>
+            </div>
+            <div class="col-md-6">
+                <p class="display-xs display-sm hidden-md hidden-lg">&nbsp;</p>
+                <ul class="footer-links ul-inline text-xs-center text-md-right mbn">
+                    <li>
+                        <a href="https://www.facebook.com/hotspotapp" class="f1 text-center circle-icon">
+                            <i class="fa fa-facebook" style="padding-left: 0;top:1px"></i>
+                        </a>
+                    </li>
+                    <li class="mll">
+                        <a href="https://twitter.com/GetHotspotApp" class="f1 text-center circle-icon">
+                            <i class="fa fa-twitter" style="padding-left: 3px;top:1px"></i>
+                        </a>
+                    </li>
+                    <li class="mll">
+                        <a href="mailto:info@gethotspotapp.com" class="f1 text-center circle-icon">
+                            <i class="fa fa-envelope" style="padding-left: 1px;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p class="text-center ptx text-999">
+                <small>
+                    Copyright &copy; 2015-2016 Hotspot Inc. All Rights Reserved.
+                </small>
+            </p>
+        </div>
+    </div>
+</footer>
+<!--End Footer-->
+
+<!-- Modal -->
+<div id="SMSModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">GET YOUR FREE DRINK</h4>
+            </div>
+            <div class="modal-body">
+                <p>Enter your phone number and we'll text you a link to download our app and get your first drink free.</p>
+                <p>
+                    <input id="phoneinput" type="text" class="form-control" placeholder="(206) 555-5555" autofocus/>
+                <div class="error">Must be a 10 digit US Phone Number.</div>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="sendSMS" class="btn btn-primary">SEND</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<!-- Page Animations -->
+<script>
+    new WOW().init();
+</script>
+<!-- End Page Animations -->
+
+<!-- Facebook Integration -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+            appId      : '741683799178892',                        // App ID from the app dashboard // Channel file for x-domain comms
+            status     : true,                                 // Check Facebook Login status
+            xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+    };
+
+    // Load the SDK asynchronously
+    (function(){
+        // If we've already installed the SDK, we're done
+        if (document.getElementById('facebook-jssdk')) {return;}
+
+        // Get the first script element, which we'll use to find the parent node
+        var firstScriptElement = document.getElementsByTagName('script')[0];
+
+        // Create a new script element and set its id
+        var facebookJS = document.createElement('script');
+        facebookJS.id = 'facebook-jssdk';
+
+        // Set the new script's source to the source of the Facebook JS SDK
+        facebookJS.src = 'https://connect.facebook.net/en_US/all.js';
+
+        // Insert the Facebook JS SDK into the DOM
+        firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+    }());
+</script>
+<!-- End Facebook Integration -->
+
+<!-- Handler for SMS Invites -->
+<script>
+    $(document).ready(function(){
+
+        /**
+         * Validate length of US phone number
+         */
+        function isPhoneNumberValid () {
+            return (parseInt($('#phoneinput').val().replace(/\s+/g, ''))).toString().length === 10;
+        }
+
+        /**
+         * Form validation (with side effects)
+         */
+        $('#phoneinput').keyup(function () {
+            var isValid = isPhoneNumberValid();
+
+            $('#sendSMS').css('opacity', (isValid ? 1 : 0.7));
+
+            if (isValid) $('#SMSModal .error').hide();
+        });
+
+        /**
+         * Handle SMS submission
+         */
+        $('#sendSMS').click(function (e) {
+            if (!isPhoneNumberValid()) {
+                $('#SMSModal .error').show();
+                return;
+            }
+
+            mixpanel.track('splash_page_action', {"action":"send_sms"});
+
+            var phoneNumber = $('#phoneinput').val().replace(/\s+/g, '');
+
+            var protocol = window.location.protocol === "https" ? "https" : "http";
+
+            $.post(protocol + '://www.gethotspotapp.com/api/text-app-link/', { phone : phoneNumber }, function () {
+                // Handle the successful completion of POST request
+            });
+
+            // Dismiss modal
+            $('#SMSModal').modal('toggle');
+        });
+
+        // Autofocus on Phone Input
+        $('button[data-toggle]').click(function () {
+            setTimeout(function () {
+                $('#phoneinput').focus();
+            }, 300);
+        });
+
+    });
+</script>
+<!-- End Handler for SMS Invites -->
+
+</body>
+</html>

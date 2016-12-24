@@ -1,0 +1,152 @@
+@import url(lato.css);
+
+body {
+    background: #000;
+}
+.bg-cover {
+    background: url('../images/header.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.navbar-brand .logo {
+    margin-top: -1px;
+    margin-left: 14px;
+}
+.content-item {
+    height: 500px;
+}
+.bg-hs-blue {
+    background: #171920;
+}
+.btn-primary {
+    color: #ffffff;
+    background-color: #0d6ccb;
+    border-color: #0d6ccb;
+    font-size: 0.95em !important;
+    letter-spacing: 0.75px;
+    border-radius:1px;
+}
+.btn-primary:hover {
+    background-color: #1082F5;
+    border-color: #1082F5;
+}
+.btn-primary:focus {
+    background-color: #1082F5;
+    border-color: #1082F5;
+}
+button:focus {
+    outline-color: transparent !important;
+    outline-style: none !important;
+}
+.menu-link {
+    font-size: 1.25em;
+    opacity: 0.65;
+    transition: all 300ms ease-in-out;
+}
+.menu-link:hover {
+    opacity: 0.9;
+}
+.iphone {
+    width: 100%;
+    max-width: 432px;
+    position: relative;
+    top: 18px;
+    left: 12px;
+}
+.footer-links {
+    margin-top: -5px;
+    padding: 0;
+}
+.modal-dialog {
+    margin-top: calc(40vh - 128px);
+}
+.modal-footer {
+    border-top: none;
+    padding-top: 0;
+}
+#sendSMS {
+    opacity: 0.7;
+}
+.error {
+    background: red;
+    color: #fff;
+    font-size: 10px;
+    display: none;
+    margin-top: -12px;
+    padding: 1px 12px;
+}
+
+
+/**
+ * Icons
+ */
+.pay-icon {
+    height: 90px;
+    position: relative;
+    top: -2px;
+}
+.calendar-icon {
+    height: 90px;
+    position: relative;
+    top: -2px;
+}
+.users-icon {
+    height: 90px;
+    position: relative;
+    top: 8px;
+}
+.news-icon {
+    height: 90px;
+    position: relative;
+    top: 2px;
+}
+.circle-icon {
+    width: 48px;
+    height: 48px;
+    background: #222;
+    border-radius: 50%;
+    display: table;
+    padding: 0 !important;
+}
+.circle-icon i {
+    display: table-cell;
+    vertical-align: middle;
+    position:relative;
+}
+
+/**
+ * Utilities
+ */
+.nudge-down-6 {
+    position: relative;
+    top: 6px;
+}
+.Mln {
+    margin-left: 0;
+}
+.text-ddd {
+    color: #ddd;
+}
+.text-999 {
+    color: #999;
+}
+
+/**
+ * Media Queries
+ */
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+    .lead {
+        font-size: 16px;
+    }
+    .content-item {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .content-item {
+        height: 250px;
+    }
+}

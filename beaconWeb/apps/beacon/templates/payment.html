@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <title>Payment for Event at {{ event.place.name }}</title>
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css"/>#}
+{##}
+{#    <!--Custom Styles-->#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css"/>#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/meta-bootstrap.css"/>#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">#}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/payment-style.css"/>
+
+    <!-- Mixpanel -->
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+        b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("5ef90c03d9e72b7e1f460600d47de6ab");
+    </script>
+    <!-- end Mixpanel -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+{#<!-- Header -->#}
+<header class="img-background metabootstrap-demo bg-cover bs-layout">
+    <!-- TOP NAV BLOCK -->
+    <nav class="top-nav-block pvx"><div class="container">
+        <div class="navbar navbar-clear">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <img class="logo" src="{{ STATIC_URL }}css/images/hotspot-logo-white.png" alt="Hotspot Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </nav>
+    <!-- END TOP NAV BLOCK -->
+{##}
+{#    <!-- LEFT-ALIGNED HERO -->#}
+{#    <div class="container">#}
+{#        <div class="hero-section wow fadeIn left-aligned-hero row ptxl pbxxl">#}
+{#            <div class="col-sm-12 col-md-7 text-white text-left">#}
+{#                <h1 class="text-inverse dark-text-glow line-height-1-5">#}
+{#                    <strong>THE BEST PRICES</strong><br>#}
+{#                    <span class="Light">AT THE HOTTEST BARS</span>#}
+{#                </h1>#}
+{#                <p class="lead mtl dark-text-glow Light text-ddd">#}
+{#                    Hotspot gives you and your friends access to the best events and drink specials around town.#}
+{#                </p>#}
+{#                <p class="mtl">#}
+{#                    <button class="btn btn-primary dark-box-shadow Medium Mln" style="margin-left:0" data-toggle="modal" data-target="#SMSModal">#}
+{#                        DOWNLOAD THE APP#}
+{#                    </button>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+</header>
+{#<!-- End Header -->#}
+
+<!-- Offers & Events Section -->
+<section class="bg-white pbn ptx">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-7 col-xm-7 form-border">
+                <h5>{{ event.item_name }} at {{ event.place.name }}</h5>
+                <p>{{ event.description }}</p>
+                <p><strong class="content">You must purchase through <a href="http://www.GetHotspotApp.com">Hotspot</a> to get tickets for ${{ app_price }} (limit of one per person). Otherwise you can buy multiple tickets here for ${{ current_price }} per ticket.</strong><br><br><i>If you have any questions, email us at <a href="mailto:info@gethotspotapp.com">info@gethotspotapp.com</a>.</i></p>
+                <form id="checkout" method="post" action="/checkout/">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Full Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                  </div>
+                    <div class="form-group">
+                      <label for="ticketNumber">Select Number of Tickets:</label>
+                      <select class="form-control" id="ticketNumber">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                          <option>5</option>
+                      </select>
+                    </div>
+                    <label for="promo">Promo Code</label>
+                    <div class="input-group">
+                      <input type="text" id="promo" class="form-control" placeholder="Optional">
+                      <span class="input-group-btn">
+                        <button class="btn btn-secondary apply-button" type="button">Apply</button>
+                      </span>
+                    </div>
+                    <table class="table">
+{#                        <caption>Pricing Overview</caption>#}
+                        <thead>
+                            <tr>
+                                <th>Number</th>
+                                <th>Ticket Price</th>
+                                <th class="text-right">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ticket-number">
+                                    1
+                                </td>
+                                <td class="ticket-price">
+{#                                    ${{ event.web_item_price }}#}
+                                </td>
+                                <td class="total text-right">
+{#                                    ${{ event.web_item_price }}#}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <div id="payment-form">
+
+                    </div>
+                    <hr>
+                  <button type="submit" class="btn btn-default submit-button">Confirm Purchase</button>
+                </form>
+{#                <form id="checkout" method="post" action="/checkout">#}
+{#                  <div id="payment-form"></div>#}
+{#                  <input type="submit" class="btn btn-default" value="Submit">#}
+{#                </form>#}
+            </div>
+{#            <div class="col-md-5 wow fadeInUp phx position-relative overflow-hidden text-xs-center text-md-left">#}
+{#                <img src="{{ STATIC_URL }}images/i1e-min.png" alt="App Screenshot" class="iphone"/>#}
+{#            </div>#}
+        </div>
+    </div>
+</section>
+<!--End Offers & Events Section-->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script src="https://js.braintreegateway.com/js/braintree-2.24.0.min.js"></script>
+<script>
+    // We generated a client token for you so you can test out this code
+    // immediately. In a production-ready integration, you will need to
+    // generate a client token on your server (see section below).
+    var clientToken = "{{ client_token }}";
+
+    var docURL = document.URL;
+    var base_url;
+    if (docURL.indexOf("hotspotapp-staging") !== -1) {
+        base_url = "http://hotspotapp-staging.herokuapp.com/";
+    } else {
+        base_url = "http://www.gethotspotapp.com/";
+    }
+
+    braintree.setup(clientToken, "dropin", {
+        container: "payment-form",
+        onPaymentMethodReceived: function(obj) {
+            var eSelect = document.getElementById('ticketNumber');
+            var data = {};
+            data.nonce = obj.nonce;
+            data.full_name = $('#fullName').val();
+            data.email = $('#email').val();
+            data.event_id = {{ event.id }};
+            data.attendees = eSelect.selectedIndex + 1;
+            data.promo_code = $('#promo').val();
+
+            if (data.full_name && validateEmail(data.email) && data.event_id) {
+                var url = base_url + "api/cash-payment/";
+                $.post(url, data, function() {
+                    location.href = base_url + "checkout/";
+                }).fail(function() {
+                   alert("Payment failed. Please email info@gethotspotapp.com.");
+                });
+            } else {
+                alert("Please include a valid name and email");
+            }
+
+            return false
+        }
+    });
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+</script>
+
+<script>
+
+    var current_price = {{ current_price }};
+    var eSelect = document.getElementById('ticketNumber');
+
+    function update_price() {
+        var ticket_price = current_price;
+        var total = (eSelect.selectedIndex + 1) * current_price;
+        $('.ticket-price').html("$" + ticket_price.toFixed(2));
+        $('.total').html("$" + total.toFixed(2));
+        var text = eSelect.selectedIndex + 1;
+        var total = (eSelect.selectedIndex + 1) * current_price;
+        $('.ticket-number').html(text);
+        $('.total').html("$" + total);
+    }
+
+    window.onload = function() {
+        update_price();
+        eSelect.onchange = function() {
+            update_price();
+        };
+
+        $('.apply-button').on('click', function() {
+        var data = {};
+        data.event_id = {{ event.id }};
+        data.promo_code = $('#promo').val();
+            var url = base_url + "api/web-promo/";
+            $.post(url, data, function(response) {
+                content = response.content;
+                current_price = response.price;
+                $('.content').text(content);
+                update_price();
+            }).fail(function() {
+               alert("Promo code is invalid");
+            });
+        });
+    }
+
+</script>
+
+<!-- Page Animations -->
+<script>
+    new WOW().init();
+</script>
+<!-- End Page Animations -->
+
+<!-- Facebook Integration -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+            appId      : '741683799178892',                        // App ID from the app dashboard // Channel file for x-domain comms
+            status     : true,                                 // Check Facebook Login status
+            xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+    };
+
+    // Load the SDK asynchronously
+    (function(){
+        // If we've already installed the SDK, we're done
+        if (document.getElementById('facebook-jssdk')) {return;}
+
+        // Get the first script element, which we'll use to find the parent node
+        var firstScriptElement = document.getElementsByTagName('script')[0];
+
+        // Create a new script element and set its id
+        var facebookJS = document.createElement('script');
+        facebookJS.id = 'facebook-jssdk';
+
+        // Set the new script's source to the source of the Facebook JS SDK
+        facebookJS.src = 'https://connect.facebook.net/en_US/all.js';
+
+        // Insert the Facebook JS SDK into the DOM
+        firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+    }());
+</script>
+<!-- End Facebook Integration -->
+
+
+</body>
+</html>

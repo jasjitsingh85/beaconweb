@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hotspot</title>
+    <meta charset="utf8">
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/application.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/hotspot-detail-deals.css" />
+
+   <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+   <script src="{{ STATIC_URL }}js/jquery.hammer.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.simple-countdown.js"></script>
+   <script src="{{ STATIC_URL }}js/jquery.transit.js"></script>
+   <script src="{{ STATIC_URL }}js/fastclick.js"></script>
+   <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9pd7fq6gEOxwuHDTItdwOfm4OdQ5kRWI&sensor=true">
+   </script>
+
+{#   <script src="{{ STATIC_URL }}js/hotspot.js"></script>#}
+{#   <script src="{{ STATIC_URL }}js/hotspot_detail_deal.js"></script>#}
+
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+    b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("5ef90c03d9e72b7e1f460600d47de6ab");</script>
+    <!-- end Mixpanel -->
+
+
+</head>
+<body>
+{#    <div class="loading-container">#}
+{#      <img class="loading" src="{{ STATIC_URL }}img/main-spinner.gif" />#}
+{#    </div>#}
+    <div class="main-container" style="background: #f8f3ec;">
+        <div class="hotspot-header">
+          <div class="notification-container">
+{#            <span class="notifications">#}
+{#              <span class="notification-number"></span>#}
+{#              <img class="notification-spinner" src="/images/notification-spinner.gif" />#}
+{#            </span>#}
+          </div>
+          <div class="logo-container">
+            <img class="header-logo" src="{{ STATIC_URL }}img/hotspot-mobile-logo.png" />
+          </div>
+        </div>
+        <div class="main-detail-container" style="height:100%; width:100%;">
+              <div class="main-body" style="display:block;padding-top: 60px;/* position: absolute; */top: 60px;width: 80%;margin: auto;">
+                <span style="display: block;font-size: 26px;text-align: center;font-weight: 400;">Thanks for joining Hotspot!</span>
+                <span style="display:block; margin: 15px 0;">Show this to staff at any of the following locations to redeem your free drink:</span>
+                <span style="display:block; font-weight: bold;">Russian Lady</span>
+                <span style="display:block; position:absolute; bottom:200px; text-align:center; width:80%;">Show this coupon to your server and ask them to put it on "Hotspot's Tab"</span>
+              </div>
+
+                <div class="redeem-container" style="position:absolute; bottom:0px; width:100%;">
+                        <img class="redeem-button" src="{{ STATIC_URL }}img/redeemButtonActive.png">
+                </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+    $('.redeem-container').hammer().on('tap', function(){
+        var confirm_return = confirm('Are you sure you want to redeem?');
+                if (confirm_return== true) {
+                    $('.redeem-button').attr('src', '{{ STATIC_URL }}img/redeemButtonInactive.png');
+                }
+    });
+
+    var docURL = document.URL;
+    var url;
+    if (docURL.indexOf("localhost") !== -1) {
+      url = "http://localhost:8000/";
+    } else if (docURL.indexOf("localhost") !== -1) {
+      url = "http://hotspotapp-staging.herokuapp.com/"
+    } else {
+      url = "http://mighty-reef-7102.herokuapp.com/";
+    }
+
+    $(document).ready(function() {
+        if (url === "http://www.gethotspotapp.com/") {
+            mixpanel.track("free_drink_viewed");
+        }
+    });
+
+</script>

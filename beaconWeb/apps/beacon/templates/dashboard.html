@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Campus Manager Dashboard</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/hotspot.css">
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/dashboard.css">
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+    <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+    <script src="{{ STATIC_URL }}js/hotspot-splash-page.js"></script>
+    <script src="{{ STATIC_URL }}js/waypoints.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
+    <script src="{{ STATIC_URL }}js/Chart.js"></script>
+    <script src="{{ STATIC_URL }}js/dashboard.js"></script>
+    <script src="{{ STATIC_URL }}js/dashboard_rest_api.js"></script>
+
+</head>
+<body>
+<nav class ="navbar-fixed-top dashboard-nav">
+        <div class="row">
+            <div class="col-sm-10">
+                <img id="hotspot-logo" src="{{ STATIC_URL }}img/logo.png">
+                <span class="dashboard-tagline">Dashboard (v 0.1)</span>
+                <div class="social-icons">
+                    <div class="social-icon-container">
+                        <a href="mailto:info@gethotspotapp.com" target="_blank"><img id="email-icon" src="{{ STATIC_URL }}img/email-nav.png"></a>
+                        <span>Email us!</span>
+                    </div>
+                    <div class="social-icon-container">
+                        <a href="https://hotspotapp.wordpress.com" target="_blank"><img id="blog-icon" src="{{ STATIC_URL }}img/blog-nav.png"></a>
+                        <span>Blog!</span>
+                    </div>
+                    <div class="social-icon-container">
+                        <a href="https://twitter.com/GetHotspotApp" target="_blank"><img id="twitter-icon" src="{{ STATIC_URL }}img/twitter-nav.png"></a>
+                        <span>Twitter!</span>
+                    </div>
+                    <div class="social-icon-container">
+                        <a href="https://www.facebook.com/hotspotapp" target="_blank"><img id="facebook-icon" src="{{ STATIC_URL }}img/facebook-nav.png"></a>
+                        <span>Facebook!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="main-dashboard">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                <div style="display:block">
+                    <span class="active-user-label">Active Users in New Haven:</span>
+                    <span class="active-user-number"></span>
+                </div>
+                <div style="display:block">
+                    <span class="active-user-label">Total Users in New Haven:</span>
+                    <span class="total-user-number"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                <span>Unique Deals Set/Week as Percentage of Total Active Users (New Haven)</span>
+                <canvas id="myChart" width="800" height="400"></canvas>
+            </div>
+        </div>
+{#        <div class="row">#}
+{#            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">#}
+{#                <span class="refresh-dashboard">Refresh</span>#}
+{#            </div>#}
+{#        </div>#}
+    </section>
+    <div class="loading-indicator">
+        <img src="{{ STATIC_URL }}img/main-spinner.gif">
+    </div>
+{#    <section class="footer">#}
+{#        <div class="row">#}
+{#            <div class="col-sm-9 border col-sm-offset-1"></div>#}
+{#        <div class="row">#}
+{#            <div class="col-sm-9 col-sm-offset-2">#}
+{#                <div class="col-sm-4">#}
+{#                    <span class="heading">&copy; Copyright 2014 Hotspot Studios.</span>#}
+{#                    <span class="content">All Rights Reserved</span>#}
+{#                </div>#}
+{#                <div class="col-sm-4">#}
+{#                    <span class="heading">Contact Us:</span>#}
+{#                    <a href="mailto:info@gethotspotapp.com"><span class="content">info@gethotspotapp.com</span></a>#}
+{#                </div>#}
+{#                <div class="col-sm-4">#}
+{#                    <span class="heading">Requirements:</span>#}
+{#                    <span class="content">Compatible with iOS 7.0</span>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        </div>#}
+{#    </section>#}
+</body>
+</html>

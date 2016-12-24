@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Hotspot App</title>
+    <meta name="apple-itunes-app" content="app-id=667211700">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/hotspot.css">
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+    <script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.maskedinput.min.js"></script>
+</head>
+
+    <script>
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.location.href = "https://itunes.apple.com/us/app/hotspot-meet-up-with-friends/id737629048?ls=1&mt=8"
+        }
+    </script>
+
+<body>
+    <div class="container" id="main-content">
+        <div class="row">
+            <div class="span1"></div>
+            <div class="container span5">
+                <div class="row">
+                    <img src="{{ STATIC_URL }}img/hotspot-logo.png">
+                </div>
+                <div class="row" id="subtitle">
+                    <span></span>
+                    <div>
+                        <span>Telephone: <input type="tel" id="phone_number" name="usrtel"></span>
+                        <button id="send_message">Send</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <span id="content"></span>
+                </div>
+                <div class="row" id="appstore">
+                    <a href="https://itunes.apple.com/us/app/beacons-mobilize-your-friends/id667211700?mt=8"><img src="{{ STATIC_URL }}img/app-store.png"></a>
+                </div>
+            </div>
+            <div class="container span5">
+                <div class="row">
+                    <img id="iphones" src="{{ STATIC_URL }}img/iPhones.png">
+                </div>
+            </div>
+            <img id="first-melt" src="{{ STATIC_URL }}img/first-melt.png">
+            <img id="second-melt" src="{{ STATIC_URL }}img/second-melt.png">
+        </div>
+   </div>
+       <div id="footer">
+            <div class="row container">
+               <div id="copyright" class="span4">
+                    <h6>© Copyright 2013 Hotspot.</h6>
+                    <p>All Rights Reserved</p>
+               </div>
+               <div class="span3">
+                    <h6>Contact Us:</h6>
+                    <p>info@gethotspotapp.com</p>
+               </div>
+               <div class="span4">
+                    <h6>Requirements:</h6>
+                    <p>Compatible with iPhone 7.0</p>
+               </div>
+           </div>
+      </div>
+</body>
+
+<script>
+    $("#phone_number").mask("(999) 999-9999");
+    $(document).ready(function(){
+        $('#send_message').click(function(){
+            $.post( "ajax/test.html", function( data ) {
+                $( ".result" ).html( data );
+            });
+        });
+    });
+</script>
+
+</html>

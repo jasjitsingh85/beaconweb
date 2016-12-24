@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hotspot</title>
+    <meta charset="utf8">
+{#    <meta name="apple-itunes-app" content="app-id=737629048">#}
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+   <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+   <script src="{{ STATIC_URL }}js/jquery.hammer.min.js"></script>
+
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript">
+
+    var device;
+    var deal_status = {{ deal_status_id }};
+
+    $(document).ready(function(){
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            device = "IOS";
+        } else if (/Android/i.test(navigator.userAgent)) {
+            device = "ANDROID";
+        }
+
+        if (device === "IOS" || device === "ANDROID") {
+             $.ajax({
+                  type: "PUT",
+                  url: "http://mighty-reef-7102.herokuapp.com/api/contact_status/",
+                  data: { deal_status: deal_status }
+             })
+              .done(function( msg ) {
+                    if (device === "IOS") {
+                        window.location.href = "https://itunes.apple.com/us/app/hotspot-meet-up-with-friends/id737629048";
+                    } else if (device = "ANDROID") {
+                        window.location.href = "https://play.google.com/store/apps/details?id=com.hotspot";
+                    }
+              });
+
+        } else {
+            window.location.href = "http://www.GetHotspotApp.com";
+        }
+    });
+
+</script>

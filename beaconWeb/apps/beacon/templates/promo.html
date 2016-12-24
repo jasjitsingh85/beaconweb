@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Hotspot</title>
+    <meta name="apple-itunes-app" content="app-id=737629048">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ STATIC_URL }}css/bootstrapupdated.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ STATIC_URL }}css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+    <script src="{{ STATIC_URL }}js/waypoints.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
+    <script src="{{ STATIC_URL }}js/grayscale1.js"></script>
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+    b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("5ef90c03d9e72b7e1f460600d47de6ab");
+
+    </script>
+    <!-- end Mixpanel -->
+
+    <script>
+        mixpanel.track("splash_page_load");
+
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.location.href = "https://itunes.apple.com/us/app/hotspot-meet-up-with-friends/id737629048?ls=1&mt=8"
+        } else if (/Android/i.test(navigator.userAgent)) {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.hotspot"
+        }
+
+        var docURL = document.URL;
+        var url;
+        if (docURL.indexOf("localhost") !== -1) {
+          url = "http://localhost:8000/";
+        } else {
+          url = "http://www.gethotspotapp.com/";
+        }
+    </script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+          appId      : '741683799178892',                        // App ID from the app dashboard // Channel file for x-domain comms
+          status     : true,                                 // Check Facebook Login status
+          xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+      };
+
+      // Load the SDK asynchronously
+      (function(){
+         // If we've already installed the SDK, we're done
+         if (document.getElementById('facebook-jssdk')) {return;}
+
+         // Get the first script element, which we'll use to find the parent node
+         var firstScriptElement = document.getElementsByTagName('script')[0];
+
+         // Create a new script element and set its id
+         var facebookJS = document.createElement('script');
+         facebookJS.id = 'facebook-jssdk';
+
+         // Set the new script's source to the source of the Facebook JS SDK
+         facebookJS.src = '//connect.facebook.net/en_US/all.js';
+
+         // Insert the Facebook JS SDK into the DOM
+         firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+       }());
+    </script>
+
+    <div id="myModal" class="modal fade">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body" align="center" style="padding-bottom:40px; padding-left:14px;">
+                        <p class="modal-text" style="color:black; line-height:1.6; font-size:16px; font-weight:500; text-align:center; margin:20px 40px 10px">ENTER YOUR PHONE NUMBER AND WE'LL TEXT YOU A LINK TO DOWNLOAD OUR APP</p>
+                        <input id="phoneinput" type="text" size="40" style="color:black; margin:10px 10px 10px; font-size:17px; padding-left:25px; padding-top:6px; padding-bottom:4px;" placeholder="(206) 555-5555" align="left" maxlength="10" class="phone-box" autofocus>
+                        &nbsp;
+                        <button id="text-button-image" disabled="disabled" align="right" class="mbtn" data-dismiss="modal" aria-hidden="true">
+                            <p style="margin: 0 0 0px; font-size:15px; font-weight:600;">SEND</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="page-scroll" href="#page-top">
+                    <img class="img-responsive" src="{{ STATIC_URL }}img/Hotspot_Font_Logo.png" style="width:160px; padding-top:5px;">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/hotspotapp" target="_blank">
+                            <img class="img-responsive" src="{{ STATIC_URL }}img/Facebook.png" width="60%">
+                        </a>
+                    </li>
+                    <li style="padding-top:1px; padding-left:12px;">
+                        <a href="https://twitter.com/GetHotspotApp" target="_blank">
+                            <img class="img-responsive" src="{{ STATIC_URL }}img/twitter.png" width="60%">
+                        </a>
+                    </li>
+                    <li style="padding-top:5px">
+                        <a href="mailto:info@gethotspotapp.com" target="_blank">
+                            <img class="img-responsive" src="{{ STATIC_URL }}img/email.png" width="60%">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1" style="padding-top:90px">
+                        <h2 class="intro-text"><strong>THE BEST DRINK</strong></h2>
+                        <h1 class="brand-heading"><strong>PRICES</strong></h1>
+                        <h2 class="intro-text"><strong>AT THE HOTTEST</strong></h2>
+                        <h1 class="brand-heading"><strong>BARS.</strong></h1>
+                        <br>
+                        <div align="center">    
+                            <button class="btn">
+                                <strong>GET THE APP</strong>
+                            </button>
+                            <br>
+{#                            <div style="padding-top:15px;">#}
+{#                                <h6>YOUR FIRST DRINK IS FREE</h6>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-lg-5">
+                        <img align="right" class="img-responsive" src="{{ STATIC_URL }}img/phone1.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="content">
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" style="padding-top:50px">
+                        <p>WE BUY DRINKS WHOLESALE FROM LOCAL VENUES TO GET YOU CRAFT BEERS, SPECIALTY COCKTAILS, AND SHOTS FOR AS LITTLE AS $1 WHEN YOU BUY THROUGH THE APP.</p>
+                        <button class="btn">
+                            <strong>GET THE APP</strong>
+                        </button>
+                        <br>
+{#                        <div style="padding-top:15px">#}
+{#                            <h6>YOUR FIRST DRINK IS FREE</h6>#}
+{#                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="invite">
+        <div class="invite-body">
+            <div class="container">
+                <div class="row">
+                    <div align="justify" class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1" style="padding-top:200px">
+                        <p>EARN FREE DRINKS WHEN YOU TEXT FRIENDS TO MEET UP AT THE BAR</p>
+                        <div align="center">
+                            <button class="btn">
+                                <strong>GET THE APP</strong>
+                            </button>
+                            <br>
+{#                            <div style="padding-top:15px">#}
+{#                                <h6>YOUR FIRST DRINK IS FREE</h6>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <img class="img-responsive" src="{{ STATIC_URL }}img/phone3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="redeem">
+        <div class="redeem-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <img align="right" class="img-responsive" src="{{ STATIC_URL }}img/phone4.png">
+                    </div>
+                    <div align="justify" class="col-sm-5 col-md-5 col-lg-5" style="padding-top:200px">
+                        <p>NO NEED TO WAIT FOR THE CHECK. TAP TO PAY ON YOUR PHONE, AND YOU'RE ALL SET.</p>
+                        <div align="center">
+                            <button class="btn">
+                                <strong>GET THE APP</strong>
+                            </button>
+                            <br>
+{#                            <div style="padding-top:15px">#}
+{#                                <h6>YOUR FIRST DRINK IS FREE</h6>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="happyhour">
+        <div class="happyhour-body">
+            <div class="container">
+                <div class="row">
+                    <div align="justify" class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1" style="padding-top:200px">
+                        <p>SEARCH THE LARGEST, MOST UP-TO-DATE LIST OF DRINK SPECIALS AND HAPPY HOURS IN TOWN</p>
+                        <div align="center">
+                            <button class="btn">
+                                <strong>GET THE APP</strong>
+                            </button>
+                            <br>
+{#                            <div style="padding-top:15px">#}
+{#                                <h6>YOUR FIRST DRINK IS FREE</h6>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <img class="img-responsive" src="{{ STATIC_URL }}img/phone5.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+                    <p style="font-weight:500;">Copyright &copy; 2015 Hotspot Inc. All rights reserved.</a>
+                    <br>
+                    <p style="font-weight:500;"><small>*Currently available in select cities</small></a>
+                </div>
+                <div class="col-sm-3 col-sm-offset-3 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+                    <p style="font-weight:500;">Contact Us:</a>
+                    <br>
+                    <a style="font-weight:500;" href="mailto:info@gethotspotapp.com" target="_blank">info@gethotspotapp.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <!-- jQuery -->
+    <script src="{{ STATIC_URL }}js/grayjquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ STATIC_URL }}js/graybootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ STATIC_URL }}js/grayjquery.easing.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+
+</body>
+    
+
+</html>

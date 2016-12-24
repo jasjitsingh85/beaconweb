@@ -1,0 +1,538 @@
+@font-face {
+  font-family: 'Lato-Black';
+  src: url('/font/Lato-Black.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('/font/Lato-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Lato-Regular","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  Helvetica, Arial, "Lucida Grande", sans-serif !important;
+}
+
+h1 {
+    font-size:46px !important;
+    font-family: 'Lato-Black' !important;
+    color: #ffffff;
+    margin:0 !important;
+    line-height: .95 !important;
+}
+
+/*** Nav Bar ***/
+
+.navbar-fixed-top {
+    background:#FFFFFF;
+    height:60px;
+}
+
+.navbar-fixed-top .social-icons {
+    display:inline;
+}
+
+.navbar-fixed-top .social-icons img {
+    margin:auto;
+    display:block;
+}
+
+.social-icon-container {
+    display: inline-block;
+    margin: 20px 25px;
+    float:right;
+    height:30px;
+    width:30px;
+    position:relative;
+}
+
+.navbar-fixed-top .social-icon-container a {
+    height:100%;
+    display:block;
+}
+
+.social-icon-container span {
+    display:none;
+    font-size:10px;
+    text-align:center;
+    font-weight:bold;
+    width:60px;
+    top:20px;
+    left: -15px;
+    color: #ffffff;
+    cursor:pointer;
+    position:absolute;
+}
+
+#hotspot-logo {
+    margin-top:12px;
+    margin-left:15px;
+}
+
+/*** Main View ***/
+.main {
+    width: 100%;
+    height: 80%;
+    min-height: 500px;
+    background: #f26451;
+    background-image: url('/img/main-illustration.png');
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;
+}
+.main {
+    padding: 10% 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main .active {
+    color: #FFFFFF;
+}
+
+.main .inactive {
+    color: #FFFFFF;
+}
+
+.main .phone-box {
+    display: inline-block;
+    background: #ffffff;
+    border: none !important;
+    -webkit-appearance: none !important;
+    text-align:left;
+    color: #000000;
+    font-weight: 300;
+    font-size: 20px;
+    height:30px;
+    margin-top:10px;
+    padding:10px 8px;
+    line-height: 0.8;
+    float:left;
+}
+
+.main .three-digit {
+    width:60px;
+    text-indent: 12px !important;
+}
+
+.main .four-digit {
+    width:75px;
+    text-indent: 12px !important;
+}
+
+#text-sent {
+    display:none;
+    font-size:18px;
+    top:8px;
+}
+
+.main .or {
+    font-size:22px;
+    margin-bottom:5px;
+    margin-top:30px;
+    font-weight:lighter;
+    color: #ffffff;
+    text-align:center;
+    display: block;
+}
+
+.main .content .get-app-container {
+    padding-top:77px;
+    padding-left:60px;
+}
+
+.get-app-container .active {
+    color: #1b1b1b !important;
+}
+
+.main .iphone {
+    position:absolute;
+    margin-left:20px;
+}
+
+.main .iphone-shadow {
+    position: absolute;
+    top: 482px;
+    left: -180px;
+}
+
+.main .splash-gif {
+    position: relative;
+    top: 70px;
+    left: 38px;
+    height: 342px;
+    width: 193px;
+}
+
+.main .glare{
+    position:relative;
+    top:80px;
+    left:130px;
+}
+
+.main .content form {
+    display:inline-block;
+    height:80px;
+    margin:20px auto 20px auto;
+}
+
+.main .content h1 {
+    margin:0px !important;
+}
+
+.main .content .input-container {
+    margin-top:5px;
+}
+
+.main .play-button {
+    display: block;
+    margin: 25px auto 0 auto;
+    position:relative;
+}
+
+.main .play-button-shadow {
+    display:block;
+    margin: 0 auto;
+}
+
+.main .text-container {
+    text-align:center;
+    margin-top: -30px;
+}
+
+.main .text-button {
+    display:inline-block;
+    height:60px;
+    width:50px;
+    position:relative;
+    top:32px;
+}
+
+.main .text-button img {
+    display:block;
+    position:relative;
+    margin:auto;
+    cursor:pointer;
+}
+
+#text-button-loader {
+    margin-top:10px;
+    display:none;
+}
+
+.main .check-box {
+    display:none;
+    vertical-align:initial;
+}
+
+.main .text-button span {
+    display:none;
+    cursor:pointer;
+    font-size:10px;
+    font-weight:bold;
+    width:50px;
+    top:33px;
+    left: 0px;
+    color: #ffffff;
+    position:absolute;
+}
+
+/*** Video View ***/
+.video {
+    background: #FFFFFF;
+    width:100%;
+    height:80%;
+    min-height:700px;
+}
+
+.video .video-container {
+    margin-top:120px;
+    margin-left:30px;
+}
+
+.watch-video {
+    cursor:pointer;
+    margin-top: 5px;
+}
+
+#player {
+    display:block;
+    margin: 0 auto;
+}
+
+/*** Video View ***/
+.share-video {
+    display:none;
+}
+
+.share-video span {
+    color:#ffffff;
+    display:block;
+    cursor:pointer;
+    text-align:center;
+    font-size:24px;
+    font-weight:100;
+}
+
+.share-buttons {
+    text-align:center;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.share-buttons img {
+    display:inline-block;
+    margin: 15px 20px;
+    cursor:pointer;
+}
+
+/*** Footer ***/
+.footer {
+    height:100px;
+    background: #1e1e1e;
+    color: #4b4b4b;
+}
+
+/*div.border {*/
+    /*border-top: 1px solid #f9f9f9;*/
+    /*border-bottom:1px solid #ececec;*/
+    /*position: relative;*/
+    /*height:2px;*/
+
+/*}*/
+
+.footer .col-md-4 {
+    margin-top:25px;
+    font-size:13px;
+    color: #a7a7a7;
+}
+
+.footer .heading {
+    display:block;
+    margin-top:15px;
+    font-weight:400;
+}
+
+.footer .content {
+    display:block;
+    margin-top:10px;
+    letter-spacing:1px;
+    font-weight:100;
+
+}
+
+::-webkit-input-placeholder {
+   line-height: 1.25;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   line-height: 1.25;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   line-height: 1.25;
+}
+
+:-ms-input-placeholder {
+   line-height: 1.25;
+}
+
+.text-app-to-phone {
+    display:block;
+    color: #ffffff;
+    cursor:default;
+    font-size:17px;
+}
+
+.main-headline {
+    display:block;
+    color: #FFFFFF;
+    margin-bottom:100px;
+}
+
+.merchant-button {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 300;
+  color: #000000;
+  /* background-color: #20c4cf; */
+  display: inline-block;
+  /* margin: 10px 10px; */
+  float: right;
+  height: 25px;
+  width: 110px;
+  text-align: right;
+  /* position: relative; */
+  /* padding: 0; */
+  /* border-radius: 5px; */
+  /* margin-left: 10px; */
+  line-height: 1.7;
+  margin-top: 18px;
+}
+
+.merchant-button a:hover {
+    text-decoration: none;
+    color: rgba(0,0,0,.5);
+}
+
+.merchant-button a {
+    color: #000000;
+}
+
+.black-box {
+    background:rgba(0, 0, 0, 0.60);
+    height:350px;
+    padding:25px 25px !important;
+}
+
+.main-headline {
+    opacity:1;
+    color:#FFFFFF;
+    font-size:26px;
+    cursor:default;
+}
+
+.black-box form {
+    position:absolute;
+    bottom:0px;
+}
+
+.sms-text-box-container {
+    display:block;
+}
+
+#text-button-image {
+  display: block;
+  float: left;
+  margin-left: 10px;
+  height: 30px;
+  margin-top: 10px;
+  cursor:pointer;
+  opacity:.5;
+}
+
+.callout {
+    background:url('/img/callout-background.png');
+    background-size:cover;
+    height:200px;
+    display:block;
+    padding-top:20px;
+    padding-right:0px !important;
+}
+
+.callout-headline {
+  font-family: "Lato-Black";
+  text-align: center;
+  display: block;
+  margin-top: 20px !important;
+  font-size: 26px;
+  margin: auto;
+  color: #FFFFFF;
+  cursor:default;
+}
+
+.callout-subtitle {
+  text-align: center;
+  display: block;
+  /* min-width: 100px; */
+  width: 700px;
+  margin-top: 15px !important;
+  font-size: 18px;
+  margin: auto;
+  color: #FFFFFF;
+  cursor:default;
+}
+
+.underline {
+      text-decoration: underline;
+}
+
+.row-fix {
+    margin:0 !important;
+}
+
+.row {
+    margin:0px !important;
+}
+
+.app-screenshots {
+    background:#cc0000;
+    /*background-size:cover;*/
+    height:560px;
+    display:block;
+    margin:0px !important;
+    padding:0px !important;
+}
+
+.first-screenshot, .second-screenshot, .third-screenshot {
+    display:block;
+    height:100%;
+    padding:0px !important;
+}
+
+.first-screenshot {
+    background:#FFF;
+}
+
+.second-screenshot {
+    background:#FFF;
+}
+
+.third-screenshot {
+    background:#FFF;
+}
+
+.blurred-grey {
+    background:#6c6c6c;
+    width:100%;
+    position:absolute;
+    bottom:0px;
+    height:200px;
+}
+
+.blurred-black {
+    display:block;
+    margin:auto;
+}
+
+.iphone-top {
+  display: block;
+  margin: auto;
+  width: 210px;
+  padding-bottom: -20px;
+  /* position: absolute; */
+  /* margin-bottom: -30px; */
+  margin-top: 54px;
+}
+
+.screenshot-text-container {
+  display: block;
+  height: 60px;
+  position: absolute;
+  color: #FFF;
+  width: 70%;
+  left: 15%;
+  bottom: 110px;
+  z-index: 500;
+}
+
+.screenshot-text-headline {
+    font-family: "Lato-Black";
+    font-size:28px;
+    text-align:center;
+}
+
+.screenshot-text-subtitle {
+    font-size: 18px;
+    /* font-weight: 200; */
+    /* margin-top: 13px; */
+    width: 275px;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    padding-left: 25px;
+}

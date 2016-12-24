@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="https://s3-us-west-2.amazonaws.com/hotspot-venue-images/ad-1.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <title>Early Access for Hotspot Open Bars in {{ market }}</title>
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css"/>#}
+{##}
+{#    <!--Custom Styles-->#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css"/>#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/meta-bootstrap.css"/>#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/payment-style.css"/>#}
+
+    <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+    mixpanel.init("01e9b8afa8ea8881e819e4f605284799");</script><!-- end Mixpanel -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div>
+    <style scoped>
+
+        @font-face {
+            font-family: 'HelveticaNeueRegular';
+            src: url('https://s3-us-west-2.amazonaws.com/hotspot-static/font/HelveticaNeue.ttf') format("truetype");
+        }
+
+        @font-face {
+            font-family: 'HelveticaNeueLight';
+            src: url('https://s3-us-west-2.amazonaws.com/hotspot-static/font/HelveticaNeueLTCom-Lt.ttf') format("truetype");
+        }
+
+        @font-face {
+            font-family: 'HelveticaNeueBold';
+            src: url('https://s3-us-west-2.amazonaws.com/hotspot-static/font/HelveticaNeue-Bold.otf') format("opentype");
+        }
+
+
+        h5 {
+            font-size:19px;
+            font-weight: 800;
+{#            font-family:'HelveticaNeueBold';#}
+        }
+
+        .extra-info {
+            font-style:italic;
+        }
+
+        .navbar {
+            margin-bottom: 5px !important;
+        }
+
+        .img-background {
+            background:#000 !important;
+        }
+
+        h4 {
+            font-weight:bold;
+        }
+
+        .send-button {
+            width:100%;
+        }
+
+        .check-in-button
+        {
+            width: 100px;
+        }
+
+        .fine-print {
+            margin-top:5px;
+            font-size:14px;
+        }
+
+        #emailInput {
+            width:250px;
+        }
+
+        .logo {
+            padding-top:6px;
+        }
+
+        .container-fluid {
+            padding-left:0px;
+        }
+
+    </style>
+
+{#<!-- Header -->#}
+<header class="img-background metabootstrap-demo bg-cover bs-layout">
+    <!-- TOP NAV BLOCK -->
+    <nav class="top-nav-block pvx"><div class="container">
+        <div class="navbar navbar-clear">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="/">
+                        <img class="logo" src="{{ STATIC_URL }}static/img/logoForEmail.png" alt="Hotspot Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </nav>
+    <!-- END TOP NAV BLOCK -->
+{##}
+{#    <!-- LEFT-ALIGNED HERO -->#}
+{#    <div class="container">#}
+{#        <div class="hero-section wow fadeIn left-aligned-hero row ptxl pbxxl">#}
+{#            <div class="col-sm-12 col-md-7 text-white text-left">#}
+{#                <h1 class="text-inverse dark-text-glow line-height-1-5">#}
+{#                    <strong>THE BEST PRICES</strong><br>#}
+{#                    <span class="Light">AT THE HOTTEST BARS</span>#}
+{#                </h1>#}
+{#                <p class="lead mtl dark-text-glow Light text-ddd">#}
+{#                    Hotspot gives you and your friends access to the best events and drink specials around town.#}
+{#                </p>#}
+{#                <p class="mtl">#}
+{#                    <button class="btn btn-primary dark-box-shadow Medium Mln" style="margin-left:0" data-toggle="modal" data-target="#SMSModal">#}
+{#                        DOWNLOAD THE APP#}
+{#                    </button>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+</header>
+{#<!-- End Header -->#}
+
+<!-- Offers & Events Section -->
+<section class="bg-white pbn ptx">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-10 col-xm-10 form-border">
+                <h5>Early Access to Hotspot Open Bars in {{ market }}</h5>
+                <p>Add your email to our list to get notified when we announce open bar events in {{ market }}. We don't spam and you can unsubscribe at any time.</p>
+                <form class="form-inline" method="post">
+                    {% csrf_token %}
+{#                  <div class="form-group">#}
+{#                    <label class="sr-only">Email</label>#}
+{#                    <p class="form-control-static">email@example.com</p>#}
+{#                  </div>#}
+                  <div class="form-group">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <input type="text" class="form-control" name="email" id="emailInput" placeholder="Enter your Email">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+{#                <p class="fine-print"><i></i></p>#}
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Offers & Events Section-->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script>
+
+    var docURL = document.URL;
+    var base_url;
+    if (docURL.indexOf("gethotspotapp") !== -1) {
+      base_url = "http://www.gethotspotapp.com/";
+        mixpanel.track("email_capture_loaded");
+    } else {
+      base_url = "http://hotspotapp-staging.herokuapp.com/";
+    }
+
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+
+</script>
+
+<!-- Page Animations -->
+<script>
+    new WOW().init();
+</script>
+<!-- End Page Animations -->
+
+<!-- Facebook Integration -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+            appId      : '741683799178892',                        // App ID from the app dashboard // Channel file for x-domain comms
+            status     : true,                                 // Check Facebook Login status
+            xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+    };
+
+    // Load the SDK asynchronously
+    (function(){
+        // If we've already installed the SDK, we're done
+        if (document.getElementById('facebook-jssdk')) {return;}
+
+        // Get the first script element, which we'll use to find the parent node
+        var firstScriptElement = document.getElementsByTagName('script')[0];
+
+        // Create a new script element and set its id
+        var facebookJS = document.createElement('script');
+        facebookJS.id = 'facebook-jssdk';
+
+        // Set the new script's source to the source of the Facebook JS SDK
+        facebookJS.src = 'https://connect.facebook.net/en_US/all.js';
+
+        // Insert the Facebook JS SDK into the DOM
+        firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+    }());
+</script>
+<!-- End Facebook Integration -->
+
+
+</div>
+</body>
+</html>

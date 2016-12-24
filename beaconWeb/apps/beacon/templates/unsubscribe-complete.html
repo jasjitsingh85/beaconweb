@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <title>Unsubscribe Complete</title>
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css"/>#}
+{##}
+{#    <!--Custom Styles-->#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css"/>#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}css/meta-bootstrap.css"/>#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">#}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/payment-style.css"/>
+
+    <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+    mixpanel.init("01e9b8afa8ea8881e819e4f605284799");</script><!-- end Mixpanel -->
+
+    <title>Tickets Purchased</title>
+</head>
+<header class="img-background metabootstrap-demo bg-cover bs-layout">
+    <!-- TOP NAV BLOCK -->
+    <nav class="top-nav-block pvx">
+        <div class="container">
+            <div class="navbar navbar-clear">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="/">
+                            <img class="logo" src="{{ STATIC_URL }}static/img/logoForEmail.png" alt="Hotspot Logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<body>
+<section class="bg-white pbn ptx">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-7 col-xm-7 form-border">
+                <h5 style="text-align:left">Unsubscribe Complete</h5>
+                <p>If you have questions, please email us at <a href="mailto:info@gethotspotapp.com">info@gethotspotapp.com</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    var docURL = document.URL;
+    var base_url;
+    if (docURL.indexOf("gethotspotapp") !== -1) {
+      base_url = "http://www.gethotspotapp.com/";
+        mixpanel.track("email_captured");
+    } else {
+      base_url = "http://hotspotapp-staging.herokuapp.com/";
+    }
+
+
+</script>
+
+</body>
+
+</html>

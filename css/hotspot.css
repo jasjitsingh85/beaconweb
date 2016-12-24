@@ -1,0 +1,344 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+  Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+h1 {
+    font-size:40px !important;
+    font-weight:bold !important;
+    color: #ffffff;
+    text-align: center !important;
+}
+
+/*** Nav Bar ***/
+
+.navbar-fixed-top {
+    margin-top:15px;
+}
+
+.navbar-fixed-top .social-icons {
+    display:inline;
+}
+
+.navbar-fixed-top .social-icons img {
+    margin:auto;
+    display:block;
+}
+
+.navbar-fixed-top .social-icon-container {
+    display: inline-block;
+    margin: 20px 25px;
+    float:right;
+    height:30px;
+    width:30px;
+    position:relative;
+}
+
+.navbar-fixed-top .social-icon-container a {
+    height:100%;
+    display:block;
+}
+
+.social-icon-container span {
+    display:none;
+    font-size:10px;
+    text-align:center;
+    font-weight:bold;
+    width:60px;
+    top:20px;
+    left: -15px;
+    color: #ffffff;
+    cursor:pointer;
+    position:absolute;
+}
+
+#hotspot-logo {
+    margin-left:30px;
+}
+
+/*** Main View ***/
+.main {
+    width: 100%;
+    height: 80%;
+    min-height: 675px;
+    background: url('../img/splash-background.png') no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;
+}
+.main .content {
+    padding: 10% 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main .content .active {
+    color: #FFFFFF;
+}
+
+.main .content .inactive {
+    color: #FFFFFF;
+}
+
+.main .content .phone-box {
+    display: inline-block;
+    border-radius: 8px;
+    background: #ffffff;
+    border: none !important;
+    -webkit-appearance: none !important;
+    text-align:left;
+    color: #ee7956;
+    font-weight: 300;
+    font-size: 22px;
+    height:30px;
+    margin: 10px 10px;
+    line-height: 0.8;
+}
+
+.main .content .three-digit {
+    width:60px;
+    text-indent: 12px !important;
+}
+
+.main .content .four-digit {
+    width:75px;
+    text-indent: 12px !important;
+}
+
+#text-sent {
+    display:none;
+    font-size:18px;
+    top:8px;
+}
+
+.main .content .or {
+    font-size:22px;
+    margin-bottom:5px;
+    margin-top:30px;
+    font-weight:lighter;
+    color: #ffffff;
+    text-align:center;
+    display: block;
+}
+
+.main .content .get-app-container {
+    padding-top:77px;
+    padding-left:60px;
+}
+
+.get-app-container .active {
+    color: #1b1b1b !important;
+}
+
+.main .iphone {
+    position:absolute;
+    margin-left:20px;
+}
+
+.main .iphone-shadow {
+    position: absolute;
+    top: 482px;
+    left: -180px;
+}
+
+.main .splash-gif {
+    position: relative;
+    top: 70px;
+    left: 38px;
+    height: 342px;
+    width: 193px;
+}
+
+.main .glare{
+    position:relative;
+    top:80px;
+    left:130px;
+}
+
+.main .content form {
+    display:inline-block;
+    height:80px;
+    margin:20px auto 20px auto;
+}
+
+.main .content h1 {
+    margin:0px !important;
+}
+
+.main .content .input-container {
+    margin-top:5px;
+}
+
+.main .play-button {
+    display: block;
+    margin: 25px auto 0 auto;
+    position:relative;
+}
+
+.main .play-button-shadow {
+    display:block;
+    margin: 0 auto;
+}
+
+.main .text-container {
+    text-align:center;
+    margin-top: -30px;
+}
+
+.main .text-button {
+    display:inline-block;
+    height:60px;
+    width:50px;
+    position:relative;
+    top:32px;
+}
+
+.main .text-button img {
+    display:block;
+    position:relative;
+    margin:auto;
+    cursor:pointer;
+}
+
+#text-button-loader {
+    margin-top:10px;
+    display:none;
+}
+
+.main .check-box {
+    display:none;
+    vertical-align:initial;
+}
+
+.main .text-button span {
+    display:none;
+    cursor:pointer;
+    font-size:10px;
+    font-weight:bold;
+    width:50px;
+    top:33px;
+    left: 0px;
+    color: #ffffff;
+    position:absolute;
+}
+
+/*** Video View ***/
+.video {
+    background: #FFFFFF;
+    width:100%;
+    height:80%;
+    min-height:700px;
+}
+
+.video .video-container {
+    margin-top:120px;
+    margin-left:30px;
+}
+
+.watch-video {
+    cursor:pointer;
+    margin-top: 5px;
+}
+
+#player {
+    display:block;
+    margin: 0 auto;
+}
+
+/*** Video View ***/
+.share-video {
+    display:none;
+}
+
+.share-video span {
+    color:#ffffff;
+    display:block;
+    cursor:pointer;
+    text-align:center;
+    font-size:24px;
+    font-weight:100;
+}
+
+.share-buttons {
+    text-align:center;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.share-buttons img {
+    display:inline-block;
+    margin: 15px 20px;
+    cursor:pointer;
+}
+
+/*** Footer ***/
+.footer {
+    min-height:150px;
+    height:20%;
+    background: #1e1e1e;
+    color: #4b4b4b;
+}
+
+/*div.border {*/
+    /*border-top: 1px solid #f9f9f9;*/
+    /*border-bottom:1px solid #ececec;*/
+    /*position: relative;*/
+    /*height:2px;*/
+
+/*}*/
+
+.footer .col-md-4 {
+    margin-top:25px;
+    font-size:13px;
+    color: #a7a7a7;
+}
+
+.footer .heading {
+    display:block;
+    margin-top:15px;
+    font-weight:400;
+}
+
+.footer .content {
+    display:block;
+    margin-top:10px;
+    letter-spacing:1px;
+    font-weight:100;
+
+}
+
+::-webkit-input-placeholder {
+   line-height: 1.25;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   line-height: 1.25;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   line-height: 1.25;
+}
+
+:-ms-input-placeholder {
+   line-height: 1.25;
+}
+
+.text-app-to-phone {
+    display:none;
+    position:absolute;
+    color: #ffffff;
+    top: 30px;
+    right: 0px;
+    cursor:default;
+    width:100%;
+}
+
+.main-headline {
+    display:block;
+    color: #FFFFFF;
+    margin-bottom:100px;
+}

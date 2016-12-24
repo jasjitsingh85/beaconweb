@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<div id="fb-root"></div>
+</body>
+    <script>
+        window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '741683799178892',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+        };
+
+        (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        setTimeout(function (){
+            FB.ui(
+              {
+                method: 'share',
+                href: 'https://www.facebook.com/events/602507866577434/',
+                  display: 'dialog',
+              },
+              // callback
+              function(response) {
+                if (response && !response.error_message) {
+                  alert('Posting completed.');
+                } else {
+                  alert('Error while posting.');
+                }
+              }
+            );
+
+        }, 500);
+    </script>
+</html>

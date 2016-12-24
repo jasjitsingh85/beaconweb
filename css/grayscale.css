@@ -1,0 +1,614 @@
+/*!
+ * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+@font-face {
+    font-family: "HelveticaNeueRegular";
+    src: url(/font/HelveticaNeue.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "HelveticaNeueLight";
+    src: url(/font/HelveticaNeueLTCom-Lt.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "HelveticaNeueBold";
+    src: url(/font/HelveticaNeue-Bold.otf) format("opentype");
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "HelveticaNeueRegular", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background-color: #fff;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0px;
+    text-transform: uppercase;
+    font-family: "HelveticaNeueRegular", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+@media all and (min-width:768px) {
+    h6 {
+        font-size: 11px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    h6 {
+        font-size: 13px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    h6 {
+        font-size: 14px;
+    }
+}
+
+p {
+    font-family: "HelveticaNeueRegular", Helvetica, Arial, sans-serif;
+    margin: 0 0 35px;
+    font-size: 1.8em;
+    line-height: 1.5;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+@media all and (min-width:768px) {
+    p {
+        font-size: 15px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    p {
+        font-size: 20px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    p {
+        font-size: 22px;
+    }
+}
+
+a {
+    font-family: "HelveticaNeueRegular", Helvetica, Arial, sans-serif;
+    color: #00a6d5;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.light {
+    font-weight: 400;
+}
+
+.navbar-custom {
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+    text-transform: uppercase;
+    font-family: "HelveticaNeueRegular", Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+}
+
+.navbar-custom .navbar-brand:focus {
+    outline: 0;
+}
+
+.navbar-custom .navbar-brand .navbar-toggle {
+    padding: 4px 6px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.navbar-custom .navbar-brand .navbar-toggle:focus,
+.navbar-custom .navbar-brand .navbar-toggle:active {
+    outline: 0;
+}
+
+.navbar-custom a {
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbar-custom .nav li a {
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar-custom .nav li a:hover {
+    outline: 0;
+    color: rgba(255,255,255,.8);
+    background-color: transparent;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li a:active {
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.navbar-custom .nav li.active {
+    outline: 0;
+}
+
+.navbar-custom .nav li.active a {
+    background-color: rgba(255,255,255,.3);
+}
+
+.navbar-custom .nav li.active a:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+@media(min-width:768px) {
+    .navbar-custom {
+        padding: 20px 0;
+        border-bottom: 0;
+        letter-spacing: 1px;
+        background: 0 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .navbar-custom.top-nav-collapse {
+        padding: 0;
+    }
+}
+
+.intro {
+    display: table;
+    width: 100%;
+    height: 50%;
+    margin-bottom:10px;
+    text-align: left;
+    vertical-align: bottom;
+    color: #fff;
+    background: url(../img/picture1.png) no-repeat bottom center scroll;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.intro .intro-body {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+@media all and (min-width: 768px) {
+    .intro {
+        height: 530px;
+        padding: 0;
+    }
+
+    .intro .intro-body .brand-heading {
+        font-size: 55px;
+        line-height: 90%;
+    }
+
+    .intro .intro-body .intro-text {
+        font-size: 30px;
+        line-height: 90%;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .intro {
+        height: 575px;
+        padding: 0;
+    }
+
+    .intro .intro-body .brand-heading {
+        font-size: 70px;
+        line-height: 90%;
+    }
+
+    .intro .intro-body .intro-text {
+        font-size: 40px;
+        line-height: 90%;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .intro {
+        height: 650px;
+        padding: 0;
+    }
+
+    .intro .intro-body .brand-heading {
+        font-size: 90px;
+        line-height: 90%;
+    }
+
+    .intro .intro-body .intro-text {
+        font-size: 50px;
+        line-height: 90%;
+    }
+}
+
+.btn {
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+  font-family: "HelveticaNeueRegular", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  background: transparent;
+  padding: 10px 50px 10px 50px;
+  border: solid #ffffff 3px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+    outline: 0;
+    color: #000;
+    background-color: #ffffff;
+}
+
+.btn:focus {
+    color: #ffffff;
+    background-image: none;
+    outline: none !important;
+    -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn:active {
+    color: #000000;
+    background-image: none;
+    outline: none !important;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.mbtn {
+  font-family: "HelveticaNeueRegular", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+  background: #ff5746;
+  padding: 12px 30px 9px 30px;
+  opacity: 0.7;
+  border: 0px;
+  cursor: pointer;
+}
+
+@-webkit-keyframes pulse {    
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {    
+    0% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.content {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    margin-bottom:10px;
+    text-align: center;
+    color: #fff;
+    background: url(../img/picture2.png) no-repeat bottom center scroll;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.content .content-body {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.content .content-body .brand-heading {
+    font-size: 40px;
+}
+
+.content .content-body .content-text {
+    font-size: 18px;
+}
+
+@media all and (min-width: 768px) {
+    .content {
+        height: 475px;
+        padding: 0;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .content {
+        height: 590px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .content {
+        height: 600px;
+    }
+}
+
+.invite {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    margin-bottom:10px;
+    text-align: left;
+    color: #fff;
+    background: url(../img/picture3.png) no-repeat bottom center scroll;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.invite .invite-body {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+@media all and (min-width: 768px) {
+    .invite {
+        height: 475px;
+        padding: 0;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .invite {
+        height: 590px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .invite {
+        height: 600px;
+    }
+}
+
+.redeem {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    margin-bottom:10px;
+    text-align: left;
+    color: #fff;
+    background: url(../img/picture4.png) no-repeat bottom center scroll;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    vertical-align: bottom;
+}
+
+.redeem .redeem-body {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+@media all and (min-width: 768px) {
+    .redeem {
+        height: 475px;
+        padding: 0;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .redeem {
+        height: 590px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .redeem {
+        height: 600px;
+    }
+}
+
+.happyhour {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    margin-bottom:10px;
+    text-align: left;
+    color: #fff;
+    background: url(../img/picture5.png) no-repeat bottom center scroll;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.happyhour .happyhour-body {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+@media all and (min-width: 768px) {
+    .happyhour {
+        height: 475px;
+        padding: 0;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .happyhour {
+        height: 590px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .happyhour {
+        height: 600px;
+    }
+}
+
+ul.banner-social-buttons {
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    ul.banner-social-buttons li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons li:last-child {
+        margin-bottom: 0;
+        margin-left:100px;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #292929;
+}
+
+
+@media all and (min-width:768px) {
+    footer p {
+        font-size: 10px;
+        margin: 0;
+    }
+}
+
+@media all and (min-width: 992px) {
+    footer p {
+        font-size: 12px;
+        margin: 0;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    footer p {
+        font-size: 14px;
+        margin: 0;
+    }
+}
+
+::-moz-selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(255,255,255,.2);
+}
+
+::selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(255,255,255,.2);
+}
+
+img::selection {
+    background: 0 0;
+}
+
+img::-moz-selection {
+    background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: rgba(255,255,255,.2);
+}
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+}
+
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:600px;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events: all;
+    border-radius: 0px;
+}
+
+.modal-header {
+    padding: 10px;
+    border-bottom: 0px;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Hotspot</title>
+    <meta name="apple-itunes-app" content="app-id=737629048">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/hotspot.css">
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+    <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+    <script src="{{ STATIC_URL }}js/hotspot-splash-page.js"></script>
+    <script src="{{ STATIC_URL }}js/waypoints.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
+</head>
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+    b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("5ef90c03d9e72b7e1f460600d47de6ab");</script>
+    <!-- end Mixpanel -->
+
+    <script>
+
+        mixpanel.track("splash_page_load");
+
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.location.href = "https://itunes.apple.com/us/app/hotspot-meet-up-with-friends/id737629048?ls=1&mt=8"
+        } else if (/Android/i.test(navigator.userAgent)) {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.hotspot"
+        }
+
+        var docURL = document.URL;
+        var url;
+        if (docURL.indexOf("localhost") !== -1) {
+          url = "http://localhost:8000/";
+        } else {
+          url = "http://www.gethotspotapp.com/";
+        }
+    </script>
+<body>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+          appId      : '741683799178892',                        // App ID from the app dashboard // Channel file for x-domain comms
+          status     : true,                                 // Check Facebook Login status
+          xfbml      : true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+      };
+
+      // Load the SDK asynchronously
+      (function(){
+         // If we've already installed the SDK, we're done
+         if (document.getElementById('facebook-jssdk')) {return;}
+
+         // Get the first script element, which we'll use to find the parent node
+         var firstScriptElement = document.getElementsByTagName('script')[0];
+
+         // Create a new script element and set its id
+         var facebookJS = document.createElement('script');
+         facebookJS.id = 'facebook-jssdk';
+
+         // Set the new script's source to the source of the Facebook JS SDK
+         facebookJS.src = '//connect.facebook.net/en_US/all.js';
+
+         // Insert the Facebook JS SDK into the DOM
+         firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+       }());
+    </script>
+    <nav class ="navbar-fixed-top">
+        <div class="row container-fluid">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <img id="hotspot-logo" src="{{ STATIC_URL }}img/updated-hotspot-logo.png">
+                </div>
+
+                <div class="col-sm-2 col-md-2 col-lg-2 col-sm-offset-8 col-md-offset-8 col-lg-offset-8">
+                    <div class="merchant-button"><a href="/merchant">Merchant Login</a></div>
+                </div>
+
+{#                <div class="social-icons">#}
+{#                    <div class="merchant-button"><a href="/merchant">Merchant Login</a></div>#}
+{#                    <div class="social-icon-container">#}
+{#                        <a href="mailto:info@gethotspotapp.com" target="_blank"><img id="email-icon" src="{{ STATIC_URL }}img/email-nav.png"></a>#}
+{#                        <span>Email us!</span>#}
+{#                    </div>#}
+{#                    <div class="social-icon-container">#}
+{#                        <a href="https://hotspotapp.wordpress.com" target="_blank"><img id="blog-icon" src="{{ STATIC_URL }}img/blog-nav.png"></a>#}
+{#                        <span>Blog!</span>#}
+{#                    </div>#}
+{#                    <div class="social-icon-container">#}
+{#                        <a href="https://twitter.com/GetHotspotApp" target="_blank"><img id="twitter-icon" src="{{ STATIC_URL }}img/twitter-nav.png"></a>#}
+{#                        <span>Twitter!</span>#}
+{#                    </div>#}
+{#                    <div class="social-icon-container">#}
+{#                        <a href="https://www.facebook.com/hotspotapp" target="_blank"><img id="facebook-icon" src="{{ STATIC_URL }}img/facebook-nav.png"></a>#}
+{#                        <span>Facebook!</span>#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 black-box">
+                    <span class="main-headline"><h1>TEXT YOUR FRIENDS TO EARN REWARDS</h1></span>
+                    <form>
+                        <img class="check-box" src="{{ STATIC_URL }}img/check-splash.png">
+                        <span class="text-app-to-phone">Text the download link to your phone:</span>
+    {#                    <div class="sms-text-box-container">#}
+                            <input type="text" placeholder="e.g. 555-555-5555" align="left" maxlength="10" class="phone-box">
+    {#                    <input type="text" placeholder="555" align="middle" maxlength="3" class="three-digit phone-box second-box">#}
+    {#                    <input type="text" placeholder="5555" align="middle" maxlength="4" class="four-digit phone-box third-box">#}
+                            <img id="text-button-image" src="{{ STATIC_URL }}img/text-button.png">
+                            <img id="text-button-loader" src="{{ STATIC_URL }}img/cell-tower.GIF">
+                            <span id="text-sent">Sent!</span>
+                            <span id="text-button-text">Text me!</span>
+    {#                    </div>#}
+    {#                    </div>#}
+                    </form>
+                </div>
+         </div>
+{#            <div class="col-sm-8 get-app-container">#}
+{#                    <div class="main-headline">#}
+{#                        <h1>Text your friends,</h1>#}
+{#                        <h1>Get Sweet Deals.</h1>#}
+{#                    </div>#}
+{#                    <h1 class="active">Get the App.</h1>#}
+{#                    <div class="row input-container">#}
+{#                        <div class="col-sm-12 text-container">#}
+{#                            <form>#}
+{#                                <img class="check-box" src="{{ STATIC_URL }}img/check-splash.png">#}
+{#                                <span class="text-app-to-phone">Text the app to your phone:</span>#}
+{#                                <input type="text" placeholder="555" align="middle" maxlength="3" class="three-digit phone-box first-box">#}
+{#                                <input type="text" placeholder="555" align="middle" maxlength="3" class="three-digit phone-box second-box">#}
+{#                                <input type="text" placeholder="5555" align="middle" maxlength="4" class="four-digit phone-box third-box">#}
+{#                                <div class="text-button">#}
+{#                                    <img id="text-button-image" src="{{ STATIC_URL }}img/splash-text-button.png">#}
+{#                                    <img id="text-button-loader" src="{{ STATIC_URL }}img/cell-tower.GIF">#}
+{#                                    <span id="text-sent">Sent!</span>#}
+{#                                    <span id="text-button-text">Text me!</span>#}
+{#                                </div>#}
+{#                            </form>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                <div class="row">#}
+{#                    <span class="col-sm-12 or">or</span>#}
+{#                </div>#}
+{#                <div class="share-video">#}
+{#                    <h1 class="inactive">Show Your Friends.</h1>#}
+{#                    <div class="share-buttons">#}
+{#                        <img id="facebook-share" src="{{ STATIC_URL }}img/facebook-share.png">#}
+{#                        <a href="https://twitter.com/intent/tweet?text=@GetHotspotApp%20is%20a%20new%20app%20that%20makes%20it%20easy%20to%20meet%20up%20with%20your%20friends%20in%20real%20life.%20Check%20out%20the%20video%20at&url=http://www.GetHotspotApp.com" data-lang="en"><img id="twitter-share" src="{{ STATIC_URL }}img/twitter-share.png"></a>#}
+{#                        <a href="mailto:?subject=Check%20out%20Hotspot&body=Hotspot%20is%20a%20new%20app%20that%20makes%20it%20easy%20to%20meet%20up%20with%20your%20friends%20in%20real%20life.%20Check%20out%20the%20video%20at%20http://www.GetHotspotApp.com"><img id="email-share" src="{{ STATIC_URL }}img/email-share.png"></a>#}
+{#                    </div>#}
+{#                    <span>(Or watch the video again)</span>#}
+{#                </div>#}
+{#                <div class=watch-video>#}
+{#                    <h1 class="inactive">Watch the Video.</h1>#}
+{#                    <div class="play-button-container">#}
+{#                        <img class="play-button" src="{{ STATIC_URL }}img/play-button.png">#}
+{#                    </div>#}
+{#                </div>#}
+{#                <img class="play-button-shadow" src="{{ STATIC_URL }}img/play-button-shadow.png">#}
+{#            </div>#}
+{#        </div>#}
+{#        </div>#}
+{#    </section>#}
+{##}
+{#    <section class="video">#}
+{#        <div class="container">#}
+{#        <div class="row main-video-row">#}
+{#            <div class="col-sm-8 video-container">#}
+{#                <div id="player"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#        </div>#}
+    </section>
+    <section>
+         <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 callout">
+                    <span class="callout-headline">HAPPY HOUR IS NOW ON DEMAND</span>
+                    <span class="callout-subtitle">Unlock ridiculously sweet rewards at bars, restaurants, and coffee shops just for texting your friends to join you. <span class="underline">They don't even have to show up.</span></span>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <section>
+         <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 app-screenshots">
+                    <div class="col-sm-4 col-md-4 col-lg-4 first-screenshot">
+                        <img class="iphone-top" src="{{ STATIC_URL }}img/screenshot-one.png">
+                        <div class="screenshot-text-container">
+                            <div class="screenshot-text-headline">
+                                SELECT DEAL.
+                            </div>
+                            <div class="screenshot-text-subtitle">
+                                Scroll through deals from a list of local venues on Hotspot
+                            </div>
+                        </div>
+                        <div class="blurred-grey">
+                            <img class="blurred-black" src="{{ STATIC_URL }}img/blurred-bottom-of-phone.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 second-screenshot">
+                       <img class="iphone-top" src="{{ STATIC_URL }}img/screenshot-two.png">
+                        <div class="screenshot-text-container">
+                            <div class="screenshot-text-headline">
+                                TEXT FRIENDS.
+                            </div>
+                            <div class="screenshot-text-subtitle">
+                                Type a message, select a time, and pick a few friends to text
+                            </div>
+                        </div>
+                        <div class="blurred-grey">
+                            <img class="blurred-black" src="{{ STATIC_URL }}img/blurred-bottom-of-phone.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 third-screenshot">
+                        <img class="iphone-top" src="{{ STATIC_URL }}img/screenshot-three.png">
+                        <div class="screenshot-text-container">
+                            <div class="screenshot-text-headline">
+                                SAVE MONEY.
+                            </div>
+                            <div class="screenshot-text-subtitle">
+                                Show voucher to venue to earn rewards and save on drinks
+                            </div>
+                        </div>
+                        <div class="blurred-grey">
+                            <img class="blurred-black" src="{{ STATIC_URL }}img/blurred-bottom-of-phone.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <section class="footer">
+        <div class="container-fluid">
+            <div class="">
+                <div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1"></div>
+                <div class="">
+                    <div class="col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1">
+                        <div class="col-sm-4">
+                            <span class="heading">&copy; Copyright 2015 Hotspot Studios.</span>
+                            <span class="content">All Rights Reserved</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="heading">Contact Us:</span>
+                            <a href="mailto:info@gethotspotapp.com"><span class="content">info@gethotspotapp.com</span></a>
+                        </div>
+        {#                <div class="col-sm-4">#}
+        {#                    <span class="heading">Requirements:</span>#}
+        {#                    <span class="content">Compatible with iOS 7.0</span>#}
+        {#                </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

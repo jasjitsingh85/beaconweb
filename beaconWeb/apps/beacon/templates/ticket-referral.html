@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotspot - Tickets</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <meta name="apple-itunes-app" content="app-id=737629048">
+
+	<!-- CSS Files -->
+	<link href="{{ STATIC_URL }}static/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="{{ STATIC_URL }}static/font-awesome.min.css" rel="stylesheet">
+	<link href="{{ STATIC_URL }}static/pe-icon-7-stroke.css" rel="stylesheet">
+	<link href="{{ STATIC_URL }}static/animate.css" rel="stylesheet" media="screen">
+	<link href="{{ STATIC_URL }}static/owl.theme.css" rel="stylesheet">
+	<link href="{{ STATIC_URL }}static/owl.carousel.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://hotspot-static.s3-website-us-west-2.amazonaws.com/css/lato.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+	<link href="{{ STATIC_URL }}static/css-index-red.css" rel="stylesheet" media="screen">
+        <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+    mixpanel.init("01e9b8afa8ea8881e819e4f605284799");</script><!-- end Mixpanel -->
+
+	<style>
+		.btn, .btn-default {
+			border-radius: 4px !important;
+		}
+		.btn-info:hover {
+			opacity: 0.9;
+		}
+		.social.top a {
+			background: #fff;
+			border-color: transparent;
+		}
+		.social.top a:hover {
+			border-color: transparent;
+		}
+		.sticky-wrapper {
+			visibility: hidden;
+		}
+		.sticky-wrapper.is-sticky {
+			visibility: visible;
+		}
+		.landing h1 a:hover {
+			color: #c73d3d;
+		}
+		#intro {
+			padding-top: 30px;
+            padding-bottom: 0px !important;
+		}
+        #intro h2 {
+            margin-top:0px !important;
+        }
+        #feature-2 h2 {
+            margin-top:0px !important;
+        }
+        #feature-2 {
+            padding: 30px 0 30px !important;
+        }
+		#owlScreens img {
+			margin: 5px;
+			border-radius: 10px;
+			border: 5px solid #e9e9e9;
+		}
+		/*new social colors*/
+		.social.top .twitter a {
+			background: #1DA1F3;
+		}
+		.social.top .facebook a {
+			background: #3B5998;
+		}
+		.social.top .google a {
+			background: #dd4b39;
+		}
+		.social.top .instagram a {
+			background: #e1306c;
+		}
+		.social.top .twitter a i {
+			color: #fff;
+		}
+		.social.top .facebook a i {
+			color: #fff;
+		}
+		.social.top .google a i {
+			color: #fff;
+		}
+		.social.top .instagram a i {
+			color: #fff;
+		}
+		.social.top li {
+			transition: all 200ms ease-in-out;
+		}
+		.social.top li:hover {
+			opacity: 0.9;
+		}
+
+		/*new styles*/
+		.logo img {
+			width: initial;
+			height: initial;
+		}
+		.fullscreen h5 {
+{#			margin-top: 10vh;#}
+{#			text-transform: uppercase;#}
+            font-weight: 300;
+            font-size: 26px;
+			color: #fff;
+		}
+        h2 {
+            font-weight: 300 !important;
+		}
+        h3 {
+            font-weight: 300 !important;
+		}
+        h4 {
+            font-weight: 300 !important;
+		}
+        .price-group .price {
+            font-weight: 300 !important;
+        }
+		.fullscreen h1 {
+			max-width: 75%;
+		}
+		.signup-header {
+			margin-bottom: 0;
+		}
+		.signup-header .limited {
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+		.relative {
+			position: relative;
+		}
+		.signup-header .relative h1 {
+			margin: 0;
+			margin-bottom: 1.5rem;
+			position: relative;
+			z-index: 999;
+			padding-top: 1rem;
+			max-width: 100% !important;
+			width: 100%;
+		}
+		.signup-header .relative h3 {
+			position: absolute;
+			left: calc(50% - 100px);
+			transform: rotate(-3deg);
+			background: #d34a4a;
+			top: 5px;
+			margin: 0;
+			padding: 0 10px;
+		}
+		.signup-header .relative strike {
+			color:#fff;
+		}
+		.dater {
+			font-size: 2.25rem;
+			color: #eee;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		#clockspan {
+			position: relative;
+			top: -2px;
+			font-size: 2.25rem;
+		}
+		.or {
+			width: 75px;
+			margin: 0 auto;
+			margin-bottom: 10px;
+			margin-top: -10px;
+		}
+		.laters {
+			padding: 15px 35px !important;
+			line-height: 25px;
+			background-color: #5bc0de;
+			border-color: #46b8da;
+		}
+		.privacy {
+			line-height: 1.5;
+			margin-top: 12px;
+		}
+		.social-contains {
+			width: 100%;
+			text-align: center;
+			margin-top: 15px;
+			margin-bottom: 80px;
+		}
+		.sticky-button-1 {
+			width: 160px;
+{#			background-color: #5bc0de;#}
+{#			border-color: #5bc0de;#}
+            background-color:#0082d5;
+            border-color:#0082d5;
+			color: #fff;
+			margin: 0;
+		}
+		.sticky-button-2 {
+			width: 160px;
+			background-color: #d34a4a;
+			border-color: #d34a4a;
+			color: #fff;
+			margin: 0;
+		}
+        .blue-button {
+            background-color:#0082d5 !important;
+            border-color:#0082d5 !important;
+        }
+		#menu .collapse {
+			padding: 15px;
+			text-align: center;
+		}
+		#owlScreens {
+			max-width:500px
+		}
+		.no-margin {
+			margin: 0 auto;
+		}
+		.bg-f6f6f6 {
+			background: #f6f6f6
+		}
+		.m-top-0 {
+			margin-top: 0;
+		}
+		.price-box img {
+            object-fit: cover;
+            width: 100%;
+            height: 120px;
+			margin-bottom:15px;
+		}
+		#footer .copyright {
+			font-size: 14px;
+		}
+        #testi {
+            padding: 20px 0 30px 0px !important;
+        }
+        #package {
+            padding-top:50px !important;
+        }
+        .package-option {
+            padding: 50px 0 0px !important;
+        }
+        .modal-body {
+            padding: 10px 20px !important;
+        }
+        .modal-body p {
+            color:#000000; !important
+        }
+        .modal-body h4 {
+            color:#000000 !important;
+        }
+        .modal-body .form-control {
+            height:42px;
+            font-size: 16px;
+        }
+        .receipt-table {
+            margin: auto;
+            padding: 20px 0px;
+            width: 70%;
+        }
+        .receipt-table th {
+            padding: 20px 0px !important;
+            font-size:14px !important;
+        }
+        .receipt-table td {
+            padding: 20px 0px !important;
+            font-size:14px !important;
+        }
+        .fine-print {
+            font-size:13px;
+            display: block;
+            margin: auto;
+        }
+        .first-cell {
+            width:20px;
+        }
+        .middle-cell {
+            width:60%;
+            padding: 20px 0px !important;
+        }
+        .last-cell {
+            width:30%;
+        }
+        .table td {
+            padding: 20px 0px;
+        }
+        .hotspot-app-link {
+            color:#ffffff !important;
+            text-decoration: underline !important;
+        }
+        .other-place-name {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 0px 15px;
+            text-overflow: ellipsis;
+            height: 32px;
+        }
+	</style>
+
+
+{#<script src='{{ STATIC_URL }}static/loader.js'></script></head>#}
+
+<body data-spy="scroll" data-target="#navbar-scroll">
+
+<!-- /.preloader -->
+<div id="preloader"></div>
+<div id="top"></div>
+
+<!-- Header with Fullscreen background image -->
+<div class="fullscreen landing parallax" style="background-image:url('{{ STATIC_URL }}static/pour.png');" data-img-width="2000" data-img-height="1333" data-diff="100">
+
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-8">
+					<!-- /.logo -->
+					<div class="logo wow fadeInDown"> <a href=""><img src="http://hotspot-static.s3-website-us-west-2.amazonaws.com/css/images/hotspot-logo-white.png" alt="logo"></a></div>
+
+					<!-- /.main title -->
+					<h1 class="wow fadeInLeft">
+						{{ event.item_name }} at <a href="#" target="_blank">{{ event.place.name }}</a> in {{ market.name }}
+					</h1>
+
+                    <h5 class="wow fadeInLeft"> {{ event.timezone_adjusted_start|date:"l, F j" }} | {{ event.timezone_adjusted_start|date:"g:iA" }}-{{ event.timezone_adjusted_end|date:"g:iA" }}</h5>
+
+					<!-- /.header paragraph -->
+					<div class="landing-text wow fadeInLeft">
+						<p>
+							{{ event.description }}
+						</p>
+					</div>
+
+
+				</div>
+
+				<!-- /.signup form -->
+				<div class="col-md-4">
+
+					<div class="signup-header wow fadeInUp">
+
+						<h3 class="limited text-center">{{ event.item_name | upper}} PRICING</h3>
+
+						<div class="relative">
+							<h1 class="text-center">${{ current_price | floatformat }}</h1>
+{#							<h3 class="text-center"><strike>$20</strike></h3>#}
+						</div>
+
+{#						<div class="dater">#}
+{#							  <i class="pe-7s-timer"></i>&nbsp;#}
+{#							<span>Tickets only cost ${{ app_price | floatformat }} on the <a class="hotspot-app-link" id="hotspot-app-link" target="_blank" href="http://www.gethotspotapp.com">Hotspot app</a></span>#}
+{#                            <span id="clockspan">Ends in <span class="days"></span> <span class="days-label"></span>, <span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span></span>#}
+{#						</div>#}
+
+						<form class="form-header text-center" action="#" role="form">
+
+							<div class="form-group last">
+								<a href="#" id="payment-button" class="btn btn-warning btn-block btn-lg laters" data-toggle="modal" data-target="#paymentModal">BUY NOW</a>
+							</div>
+
+							<img class="or" src="{{ STATIC_URL }}static/or@2x.png" alt=""/>
+
+							<a href="#" id="subscribe-button" class="laters btn btn-info blue-button" data-toggle="modal" data-target="#subscribeModal">I'M INTERESTED</a>
+
+							<p class="privacy text-center">If you have any questions, contact us via <a href="mailto:info@gethotspotapp.com">email</a>.</p>
+						</form>
+
+					</div>
+
+					<div class="social-contains wow fadeInLeft">
+						<div class="social top">
+{#							<ul>#}
+{#								<li class="twitter text-center"><a href="#" class="wow fadeInUp" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>#}
+{#								<li class="facebook text-center"><a href="#" class="wow fadeInUp" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>#}
+{#								<li class="google text-center"><a href="#" class="wow fadeInUp" href="https://plus.google.com/" data-wow-delay="0.4s"><i class="fa fa-google-plus"></i></a></li>#}
+{#								<li class="instagram text-center"><a href="#" class="wow fadeInUp" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>#}
+{#							</ul>#}
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- NAVIGATION -->
+<div id="menu">
+	<nav class="navbar-wrapper navbar-default" role="navigation">
+		<div class="container">
+			<div id="navbar-scroll" class="collapse navbar-collapse">
+				<a href="#" id="subscribe-button-top" class="btn btn-primary sticky-button-1" data-toggle="modal" data-target="#subscribeModal">SAVE</a>
+				<a href="#" id="payment-button-top" class="btn btn-primary sticky-button-2" data-toggle="modal" data-target="#paymentModal">BUY NOW</a>
+			</div>
+		</div>
+	</nav>
+</div>
+
+
+<!-- intro section -->
+<div id="intro">
+	<div class="container">
+		<div class="row">
+
+			<!-- /.intro image -->
+			<div class="col-md-6 wow slideInLeft">
+				<div id="owlScreens">
+					<img src="{{ STATIC_URL }}static/slideshow-one.png" alt="image" class="img-responsive no-margin">
+					<img src="{{ STATIC_URL }}static/slideshow-two.png" alt="image" class="img-responsive no-margin">
+					<img src="{{ STATIC_URL }}static/slideshow-three.png" alt="image" class="img-responsive no-margin">
+				</div>
+			</div>
+
+			<!-- /.intro content -->
+			<div class="col-md-6 wow slideInRight">
+				<h2 class="m-top-0">Have a night out with Hotspot</h2>
+				<p>
+					We put on great events at reasonable prices to fill local venues when they'd be slow. From open bars to trivia nights to fantasy sports -- we've got you covered. And with our app, not only do you get the lowest prices, you can also swipe, chat, and compete with at our events -- in real life.
+				</p>
+
+				<div class="btn-section"><a href="http://www.gethotspotapp.com" id="get-hotspot-app-link" target="_blank" class="btn-default">Get the Hotspot App</a></div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- featured Location section -->
+<div id="feature-2">
+	<div class="container">
+		<div class="row">
+
+			<!-- /.feature content -->
+			<div class="col-md-6 wow fadeInLeft">
+				<h2>{{ event.place.name }}</h2>
+				<p>
+					{{ event.place.place_description }}
+				</p>
+
+				<div class="btn-section">
+					<a href="https://www.google.com/maps/search/{{ event.place.name }}+{{ market.name }}" target="_blank" class="btn-default">
+						<!--<i class="fa fa-external-link"></i> -->
+						Open in Google Maps
+					</a>
+				</div>
+
+			</div>
+
+			<!-- /.feature image -->
+			<div class="col-md-6 feature-2-pic wow fadeInRight">
+				<img src="https://maps.googleapis.com/maps/api/staticmap?center={{ event.place.latitude }},{{ event.place.longitude }}&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7Clabel:H%7C{{ event.place.latitude }},{{ event.place.longitude }}&key=AIzaSyBYgMccq5om5yxxNYsihpC_Ie7udqZDbgc" alt="Hotspot Map" class="img-responsive">
+				<div class="text-center">
+					<small>
+						<!--<a href="#" target="_blank"><i class="fa fa-external-link"></i> Open in Google Maps</a>-->
+						{{ event.place.name }} in {{ market.name }}
+					</small>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- /.testimonial section -->
+<div id="testi" class="bg-f6f6f6">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+				<div id="owl-testi" class="owl-carousel owl-theme wow fadeInUp">
+
+					<!-- /.testimonial 1 -->
+					<div class="testi-item">
+						<div class="client-pic text-center">
+
+							<!-- /.client photo -->
+							<img src="{{ STATIC_URL }}static/person-three.png" alt="client">
+						</div>
+						<div class="box">
+
+							<!-- /.testimonial content -->
+							<p class="message text-center">"I think it was great. Wasn't over crowed which was what I was expecting. The drinks were great and the servers and bartenders were awesome."</p>
+						</div>
+						<div class="client-info text-center">
+
+							<!-- /.client name -->
+							Josh, <span class="company">Ladder 133 in Providence, RI</span>
+						</div>
+					</div>
+
+					<!-- /.testimonial 2 -->
+					<div class="testi-item">
+						<div class="client-pic text-center">
+
+							<!-- /.client photo -->
+							<img src="{{ STATIC_URL }}static/person-one.png" alt="client">
+						</div>
+						<div class="box">
+
+							<!-- /.testimonial content -->
+							<p class="message text-center">"It was super easy picking up our wristbands, and we loved the unexpected bonus free T-shirts! The bartenders knew exactly what was happening, so there was no fuss getting drinks, which was amazing. We had great fun, and made new friends, woohoo!"</p>
+						</div>
+						<div class="client-info text-center">
+
+							<!-- /.client name -->
+							Robin, <span class="company">Grim's in Seattle, WA</span>
+						</div>
+					</div>
+
+					<!-- /.testimonial 3 -->
+					<div class="testi-item">
+						<div class="client-pic text-center">
+
+							<!-- /.client photo -->
+							<img src="{{ STATIC_URL }}static/person-two.png" alt="client">
+						</div>
+						<div class="box">
+
+							<!-- /.testimonial content -->
+							<p class="message text-center">"The event was AMAZING! I would love to see this event happen again."</p>
+						</div>
+						<div class="client-info text-center">
+
+							<!-- /.client name -->
+							Ashleigh, <span class="company">The Big Bang in Columbus, OH</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Other Events section -->
+<div id="package">
+	<div class="container">
+		<div class="text-center">
+
+			<!-- /.pricing title -->
+			<h2 class="wow fadeInUp">OTHER EVENTS</h2>
+			<div class="title-line wow fadeInRight"></div>
+		</div>
+		<div class="row package-option">
+
+            {% for event in nearby_events  %}
+                <div class="col-sm-3">
+                    <div class="price-box wow fadeInUp">
+                        <div class="price-heading text-center">
+                            <img src={{ event.place.image_url }} alt=""/>
+
+                            <!-- /.package name -->
+                            <h3 class="other-place-name">{{ event.place.name }}</h3>
+                        </div>
+
+                        <!-- /.price -->
+                        <div class="price-group text-center">
+                            <span class="dollar">$</span>
+                            <span class="price">{{ event.web_item_price | floatformat}}</span>
+                        </div>
+
+                        <!-- /.package features -->
+                        <ul class="price-feature text-center">
+                            <li>{{ event.timezone_adjusted_start|date:"g:iA" }}-{{ event.timezone_adjusted_end|date:"g:iA" }}</li>
+                            <li>{{ event.timezone_adjusted_start|date:"l, M j" }}</li>
+                            <li>{{ event.item_name }}</li>
+                        </ul>
+
+                        <!-- /.package button -->
+                        <div class="price-footer text-center">
+                            <a class="btn btn-price" href="{{ event.ticket_link_url }}">LEARN MORE</a>
+                        </div>
+                    </div>
+			    </div>
+            {% endfor %}
+
+{#			<!-- Event -->#}
+{#			<div class="col-sm-3">#}
+{#				<div class="price-box wow fadeInUp">#}
+{#					<div class="price-heading text-center">#}
+{#						<img src="{{ STATIC_URL }}static/ad-1.png" alt=""/>#}
+{##}
+{#						<!-- /.package name -->#}
+{#						<h3>The Yellow Room</h3>#}
+{#					</div>#}
+{##}
+{#					<!-- /.price -->#}
+{#					<div class="price-group text-center">#}
+{#						<span class="dollar">$</span>#}
+{#						<span class="price">14</span>#}
+{#					</div>#}
+{##}
+{#					<!-- /.package features -->#}
+{#					<ul class="price-feature text-center">#}
+{#						<li>7pm - 9pm</li>#}
+{#						<li>August 30th, 2016</li>#}
+{#						<li>Open Bar</li>#}
+{#					</ul>#}
+{##}
+{#					<!-- /.package button -->#}
+{#					<div class="price-footer text-center">#}
+{#						<a class="btn btn-price" href="#">LEARN MORE</a>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{##}
+{#			<!-- Event -->#}
+{#			<div class="col-sm-3">#}
+{#				<div class="price-box wow fadeInUp">#}
+{#					<div class="price-heading text-center">#}
+{#						<img src="{{ STATIC_URL }}static/ad-5.png" alt=""/>#}
+{##}
+{#						<!-- /.package name -->#}
+{#						<h3>The Orange Room</h3>#}
+{#					</div>#}
+{##}
+{#					<!-- /.price -->#}
+{#					<div class="price-group text-center">#}
+{#						<span class="dollar">$</span>#}
+{#						<span class="price">12</span>#}
+{#					</div>#}
+{##}
+{#					<!-- /.package features -->#}
+{#					<ul class="price-feature text-center">#}
+{#						<li>7pm - 9pm</li>#}
+{#						<li>August 30th, 2016</li>#}
+{#						<li>Open Bar</li>#}
+{#					</ul>#}
+{##}
+{#					<!-- /.package button -->#}
+{#					<div class="price-footer text-center">#}
+{#						<a class="btn btn-price" href="#">LEARN MORE</a>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{##}
+{#			<!-- Event -->#}
+{#			<div class="col-sm-3">#}
+{#				<div class="price-box wow fadeInUp">#}
+{#					<div class="price-heading text-center">#}
+{#						<img src="{{ STATIC_URL }}static/ad-3.png" alt=""/>#}
+{##}
+{#						<!-- /.package name -->#}
+{#						<h3>The Yellow Room</h3>#}
+{#					</div>#}
+{##}
+{#					<!-- /.price -->#}
+{#					<div class="price-group text-center">#}
+{#						<span class="dollar">$</span>#}
+{#						<span class="price">18</span>#}
+{#					</div>#}
+{##}
+{#					<!-- /.package features -->#}
+{#					<ul class="price-feature text-center">#}
+{#						<li>7pm - 9pm</li>#}
+{#						<li>August 30th, 2016</li>#}
+{#						<li>Open Bar</li>#}
+{#					</ul>#}
+{##}
+{#					<!-- /.package button -->#}
+{#					<div class="price-footer text-center">#}
+{#						<a class="btn btn-price" href="#">LEARN MORE</a>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{##}
+{#			<!-- Event -->#}
+{#			<div class="col-sm-3">#}
+{#				<div class="price-box wow fadeInUp">#}
+{#					<div class="price-heading text-center">#}
+{#						<img src="{{ STATIC_URL }}static/ad-4.png" alt=""/>#}
+{##}
+{#						<!-- /.package name -->#}
+{#						<h3>The Red Room</h3>#}
+{#					</div>#}
+{##}
+{#					<!-- /.price -->#}
+{#					<div class="price-group text-center">#}
+{#						<span class="dollar">$</span>#}
+{#						<span class="price">12</span>#}
+{#					</div>#}
+{##}
+{#					<!-- /.package features -->#}
+{#					<ul class="price-feature text-center">#}
+{#						<li>7pm - 9pm</li>#}
+{#						<li>August 30th, 2016</li>#}
+{#						<li>Open Bar</li>#}
+{#					</ul>#}
+{##}
+{#					<!-- /.package button -->#}
+{#					<div class="price-footer text-center">#}
+{#						<a class="btn btn-price" href="#">LEARN MORE</a>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+
+		</div>
+	</div>
+</div>
+
+<!-- /.footer -->
+<footer id="footer" class="bg-f6f6f6">
+	<div class="container">
+		<div class="col-sm-4 col-sm-offset-4">
+			<!-- /.social links -->
+{#			<div class="social text-center">#}
+{#				<ul>#}
+{#					<li><a class="wow fadeInUp" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>#}
+{#					<li><a class="wow fadeInUp" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>#}
+{#					<li><a class="wow fadeInUp" href="https://plus.google.com/" data-wow-delay="0.4s"><i class="fa fa-google-plus"></i></a></li>#}
+{#					<li><a class="wow fadeInUp" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>#}
+{#				</ul>#}
+{#			</div>#}
+			<div class="copyright text-center wow fadeInUp">Copyright 2016 Hotspot, Inc. All Rights Reserved.</div>
+{#			<a href="#" class="scrollToTop"><i class="fa fa-arrow-up" style="position: relative;top: -3px;font-size: 24px;"></i></a>#}
+		</div>
+	</div>
+</footer>
+
+
+<!-- Purchase Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <form id="checkout" method="post" action="/checkout/">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{ event.item_name }} at {{ event.place.name }}</h4>
+      </div>
+      <div class="modal-body">
+          {% csrf_token %}
+{#                    <input type="hidden" name="csrfmiddlewaretoken" value={% csrf_token %}>#}
+                    <div class="form-group">
+                        <!--<label for="fullName">Full Name</label>-->
+                    <input type="text" class="form-control" id="fullName" placeholder="Full Name">
+                  </div>
+                  <div class="form-group">
+                    <!--<label for="email">Email address</label>-->
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                  </div>
+                    <div class="form-group">
+                      <!--<label for="ticketNumber">Select Number of Tickets:</label>-->
+                      <select class="form-control" id="ticketNumber">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <!--<label for="promo">Promo Code</label>-->
+                    <div class="input-group">
+                      <input type="text" id="promo" class="form-control" placeholder="Promo Code (optional)">
+                      <span class="input-group-btn">
+                        <button class="btn btn-secondary apply-button" type="button" style="padding: 7px 14px !important;height: 42px;margin-left: 5px;font-size: 14px;">Apply</button>
+                      </span>
+                    </div>
+                    <style>
+                    	.table > thead > tr > th {
+						    background: transparent;
+						    color: #222;
+						}
+                    </style>
+                    <table class="table receipt-table">
+
+                        <thead>
+                            <tr>
+                                <th class="first-cell">Number</th>
+                                <th class="middle-cell"></th>
+                                <th class="text-right last-cell">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ticket-number text-center first-cell">1</td>
+                                <td class="middle-cell"></td>
+                                <td class="ticket-price text-right last-cell">$12.50</td>
+                            </tr>
+                            <tr>
+                                <td class="first-cell"></td>
+                                <td class="text-right middle-cell">Min Tip* (15%)</td>
+                                <td class="tip text-right last-cell">$12.5</td>
+                            </tr>
+                            <tr>
+                                <td class="first-cell"></td>
+                                <td class="text-right middle-cell" style="font-weight:bold">Total</td>
+                                <td class="total text-right last-cell">$12.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span class="fine-print text-center">*100% of this tip goes to the servers for this event</span>
+                    <hr>
+                    
+                    
+                    
+                    <div id="payment-form"></div>
+
+{#                    <iframe src="https://assets.braintreegateway.com/dropin/2.24.0/inline-frame.html#b3d378b9-78aa-4db6-8d49-3ec7e87e3d31" frameborder="0" allowtransparency="true" scrolling="no" name="braintree-dropin-frame" width="100%" height="68" id="braintree-dropin-frame" style="transition: height 210ms cubic-bezier(0.39, 0.575, 0.565, 1); border: 0px; z-index: 9999; height: 189px;"></iframe></div>#}
+                    <!--<hr>-->
+{#                <div class="form-group">#}
+{#                    <button type="submit" class="btn btn-default submit-button pull-right">Confirm Purchase</button>#}
+{#                </div>#}
+            </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary submit-button" style="margin: 0;height:52px">Confirm Purchase</button>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<!-- Subscription Modal -->
+<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Get Event Updates</h4>
+      </div>
+      <div class="modal-body">
+        <form id="checkout" method="post" action="/checkout/">
+        	<p>Add your email and we'll keep you updated about this event. You can remove your email from updates at any time.</p>
+                  <div class="form-group">
+{#                    <label for="email">Email address</label>#}
+                    <input type="email" class="form-control" id="email" placeholder="Email address">
+                  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary email-subscribe-button" style="margin: 0;height:52px">Keep me Updated</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- /.javascript files -->
+<script src="{{ STATIC_URL }}static/jquery.js"></script>
+<script src="{{ STATIC_URL }}static/bootstrap.min.js"></script>
+<script src="{{ STATIC_URL }}static/custom.js"></script>
+<script src="{{ STATIC_URL }}static/jquery.sticky.js"></script>
+<script src="{{ STATIC_URL }}static/wow.min.js"></script>
+<script src="{{ STATIC_URL }}static/owl.carousel.min.js"></script>
+<script>
+	new WOW().init();
+</script>
+
+<script src="https://js.braintreegateway.com/js/braintree-2.24.0.min.js"></script>
+<script>
+    // We generated a client token for you so you can test out this code
+    // immediately. In a production-ready integration, you will need to
+    // generate a client token on your server (see section below).
+    var clientToken = "{{ client_token }}";
+
+    var docURL = document.URL;
+    var base_url;
+    if (docURL.indexOf("hotspotapp-staging") !== -1) {
+        base_url = "http://hotspotapp-staging.herokuapp.com/";
+    } else {
+        base_url = "http://www.gethotspotapp.com/";
+        mixpanel.track("ticket_page_loaded");
+        mixpanel.track_links("#subscribe-button","subscribe_button_touched");
+        mixpanel.track_links("#subscribe-button-top","subscribe_button_touched");
+
+        mixpanel.track_links("#payment-button","payment_button_touched");
+        mixpanel.track_links("#payment-button-top","payment_button_touched");
+
+        mixpanel.track_links("#hotspot-app-link","hotspot_app_link_touched");
+        mixpanel.track_links("#get-hotspot-app-link","hotspot_app_link_touched");
+    }
+
+    braintree.setup(clientToken, "dropin", {
+        container: "payment-form",
+        onPaymentMethodReceived: function(obj) {
+            var eSelect = document.getElementById('ticketNumber');
+            var data = {};
+            data.nonce = obj.nonce;
+            data.full_name = $('#fullName').val();
+            data.tip = parseFloat($('.tip').html().replace(/\$/g, ''));
+            data.email = $('#email').val();
+            data.event_id = {{ event.id }};
+            data.attendees = eSelect.selectedIndex + 1;
+            data.promo_code = $('#promo').val();
+
+            if (data.full_name && validateEmail(data.email) && data.event_id) {
+                var url = base_url + "api/cash-payment/";
+                $.post(url, data, function() {
+                    location.href = base_url + "checkout/";
+                }).fail(function() {
+                   alert("Payment failed. Please email info@gethotspotapp.com.");
+                });
+            } else {
+                alert("Please include a valid name and email");
+            }
+
+            return false
+        }
+    });
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+</script>
+
+<script>
+
+    var current_price = {{ current_price }};
+    var eSelect = document.getElementById('ticketNumber');
+
+    function update_price() {
+        var ticket_price = current_price;
+        var number_of_tickets = (eSelect.selectedIndex + 1);
+        var tip = current_price * 0.15 * number_of_tickets;
+        var total = (number_of_tickets * current_price) + tip;
+        $('.ticket-price').html("$" + ticket_price.toFixed(2));
+        $('.tip').html("$" + tip.toFixed(2));
+        $('.total').html("$" + total.toFixed(2));
+{#        var text = eSelect.selectedIndex + 1;#}
+{#        var total = (eSelect.selectedIndex + 1) * current_price;#}
+        $('.ticket-number').html(number_of_tickets);
+{#        $('.total').html("$" + total);#}
+    }
+
+    window.onload = function() {
+        update_price();
+        eSelect.onchange = function() {
+            update_price();
+        };
+
+        $('.apply-button').on('click', function() {
+        var data = {};
+        data.event_id = {{ event.id }};
+        data.promo_code = $('#promo').val();
+            var url = base_url + "api/web-promo/";
+            $.post(url, data, function(response) {
+                content = response.content;
+                current_price = response.price;
+                $('.content').text(content);
+                update_price();
+            }).fail(function() {
+               alert("Promo code is invalid");
+            });
+        });
+    }
+
+</script>
+
+<script>
+	function getTimeRemaining (endtime) {
+		var t = Date.parse(endtime) - Date.parse(new Date());
+		var seconds = Math.floor((t / 1000) % 60);
+		var minutes = Math.floor((t / 1000 / 60) % 60);
+		var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+		var days = Math.floor(t / (1000 * 60 * 60 * 24));
+		return {
+			'total': t,
+			'days': days,
+			'hours': hours,
+			'minutes': minutes,
+			'seconds': seconds
+		};
+	}
+
+	function initializeClock (id, endtime) {
+		var clock = document.getElementById(id);
+		var daysSpan = clock.querySelector('.days');
+		var daysLabelSpan = clock.querySelector('.days-label');
+		var hoursSpan = clock.querySelector('.hours');
+		var minutesSpan = clock.querySelector('.minutes');
+		var secondsSpan = clock.querySelector('.seconds');
+
+		function updateClock () {
+			var t = getTimeRemaining(endtime);
+
+			daysSpan.innerHTML = t.days;
+			daysLabelSpan.innerHTML = t.days === 1 ? "day" : "days";
+			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+			secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+			if (t.total <= 0) clearInterval(timeinterval);
+		}
+
+		updateClock();
+		var timeinterval = setInterval(updateClock, 1000);
+	}
+
+	$(document).ready(function () {
+		var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+		initializeClock('clockspan', deadline);
+
+        var url = base_url + 'api/email-capture/';
+
+        $('.email-subscribe-button').on('click', function() {
+            var data = {};
+            data.event_id = {{ event.id }};
+            data.email = $('#subscribeModal').find('#email').val();
+            if (validateEmail(data.email)) {
+                $.post(url, data, function(result) {
+                    console.log(result);
+                    mixpanel.track("email_captured_for_ticket_page");
+                    $('#subscribeModal').modal('toggle');
+                });
+            } else {
+                alert("Email is invalid. Please try again.");
+            }
+        });
+
+{#        $("#owl-testimonials").owlCarousel({#}
+{#            autoPlay:true,#}
+{#        });#}
+{##}
+{#        $("#owlScreens").owlCarousel({#}
+{#            autoPlay:true,#}
+{#        });#}
+	});
+</script>
+</body>
+</html>

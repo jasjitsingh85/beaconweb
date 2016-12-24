@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Hotspot</title>
+    <meta name="apple-itunes-app" content="app-id=737629048">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ STATIC_URL }}css/bootstrapupdated.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ STATIC_URL }}css/officehero.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+    <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+    <script src="{{ STATIC_URL }}js/waypoints.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
+    <script src="{{ STATIC_URL }}js/officehero.js"></script>
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+    b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("5ef90c03d9e72b7e1f460600d47de6ab");
+
+    </script>
+    <!-- end Mixpanel -->
+
+    <script>
+        mixpanel.track("splash_page_load");
+
+        var docURL = document.URL;
+        var url;
+        if (docURL.indexOf("localhost") !== -1) {
+          url = "http://localhost:8000/";
+        } else {
+          url = "http://www.gethotspotapp.com/";
+        }
+    </script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="page-scroll" href="#page-top">
+                    <img class="img-responsive" src="{{ STATIC_URL }}img/blacklogo.png" style="width:160px; padding-top:5px;">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/hotspotapp" target="_blank">
+                            <img class="img-responsive" src="{{ STATIC_URL }}img/blackfacebook.png" width="60%">
+                        </a>
+                    </li>
+                    <li style="padding-top:1px; padding-left:12px;">
+                        <a href="https://twitter.com/GetHotspotApp" target="_blank">
+                            <img class="img-responsive" src="{{ STATIC_URL }}img/blacktwitter.png" width="60%">
+                        </a>
+                    </li>
+                    <li style="padding-top:5px">
+                        <a href="mailto:info@gethotspotapp.com" target="_blank">
+                            <img class="img-responsive" src="{{ STATIC_URL }}img/blackemail.png" width="60%">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <div id="myModal" class="modal fade">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body" align="center" style="padding-bottom:40px; padding-left:14px;">
+                        <p class="modal-text" style="color:black; line-height:1.6; font-size:16px; font-weight:500; text-align:center; margin:20px 40px 10px">ENTER YOUR EMAIL ADDRESS AND WE'LL GET IN TOUCH ABOUT GIVING YOUR ENTIRE TEAM A ROUND OF FREE DRINKS</p>
+                        <form id="sendEmail" action="MAILTO:william.xu@gethotspotapp.com" method="post" enctype="text/plain">
+                            <input id="phoneinput" type="text" size="40" style="color:black; margin:10px 10px 10px; font-size:17px; padding-left:25px; padding-top:6px; padding-bottom:4px;" placeholder="officehero@gmail.com" align="left" class="phone-box" autofocus>
+                            &nbsp;
+                            <a href="mailto:info@gethotspotapp.com?subject=Office Hero candidate" target="_blank">
+                                <button id="text-button-image" align="right" class="mbtn" data-dismiss="modal" aria-hidden="true">
+                                    <p style="margin: 0 0 0 0px; font-size:18px; font-weight:600;">SEND</p>
+                                </button>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <video autoplay loop id="bgvid">
+            <source src="{{ STATIC_URL }}img/dancing.mov">
+        </video>
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div align="center" style="padding-top:150px;" class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                        <img class="img-responsive" src="{{ STATIC_URL }}img/officeherographic.png">
+                        <div style="padding-top:100px;" align="center">    
+                            <a href="mailto:info@gethotspotapp.com?subject=Tell me more about Office Heroes!&body=Don’t forget to mention your name and the best way to follow up with you." target="_blank">
+                                <button class="btn">
+                                    <strong>GIVE YOUR COWORKERS A ROUND OF DRINKS</strong>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="content">
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                	<div height="100px">
+	                	<div align="center" style="padding-top:50px;" class="col-sm-3 col-sm-offset-2 col-md-3 col-md-offset-2 col-lg-2 col-lg-offset-3">
+	                		<p style="color:#da5d5d; font-weight:500;">It used to be that nobody knew my name.</p>
+	                	</div>
+	                	<div align="center" class="col-sm-2 col-md-2 col-lg-2">
+	                		<img align="center" class="img-responsive" src="{{ STATIC_URL }}img/justhead.png">
+	                	</div>
+	                	<div align="center" style="padding-top:50px;" class="col-sm-3 col-md-3 col-lg-2">
+	                		<p style="color:#da5d5d; font-weight:500;">Now, I'm the coolest guy at the water cooler!</p>
+	                	</div>
+	                </div>
+	                <div align="center" style="margin-top:10px;" class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+	                	<img class="img-responsive" src="{{ STATIC_URL }}img/officehero.png">
+	                	<h5 style="font-family: Quattrocento, serif; margin-top:5px; margin-bottom:15px; font-size:14px; color:#434343;">Sponsored Happy Hours by 
+                            <span style="color:#0298d6">Hotspot</span></h5>
+	                	<h5 style="font-family: Quattrocento, serif; margin-bottom:20px; line-height:1.3; text-align:justify; color:#434343;">Here at Hotspot we are on single-minded goal of getting people the tastiest drinks at the coolest bars and at the best prices- and to show we’re serious we want to buy everybody a drink on us!<br><br>
+
+						For a limited time we’re giving every company in Seattle the chance to buy everyone in their company a drink at any one of our 40 partner bars, like Re:Public, Liberty, Kessler’s and more. You just tell us when and where and we’ll take care of the rest. Not to mention, for every person who downloads the app, you’ll get another free drink!</h5>
+						<a href="mailto:info@gethotspotapp.com?subject=Tell me more about Office Heroes!&body=Don’t forget to mention your name and the best way to follow up with you." target="_blank">
+                            <button class="cbtn">
+                                <strong>GET IN TOUCH</strong>
+                            </button>
+                        </a>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="invite">
+        <div class="invite-body">
+            <div class="container">
+                <div class="row">
+                    <div align="center" style="margin-bottom:45px;" class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                    	<img class="img-responsive" class="img-responsive" src="{{ STATIC_URL }}img/Drinks.jpg">
+                    </div>
+                    <div>
+	                	<div align="center" class="col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1">
+	                		<h6 style="color:#bb1312; text-align:center;">TOTALLY FREE!<br></h6>
+	                		<p style="text-align:center; margin-top:0px; color:#434343; font-weight:500;">Your company’s sponsored happy hour is 100% free. Treat them to some drinks!</p>
+	                	</div>
+	                	<div align="center" class="col-sm-4 col-md-4 col-lg-4">
+	                		<h6 style="color:#bb1312; text-align:center;">NO CATCH!<br></h6>
+	                		<p style="margin-left:15px; margin-right:15px; text-align:center; color:#434343; font-weight:500;">There’s no hidden strings. We believe your team will love using Hotspot!</p>
+	                	</div>
+	                	<div align="center" class="col-sm-3 col-md-3 col-lg-3">
+	                		<h6 style="color:#bb1312; text-align:center;">NO LIMIT ON INVITES!<br></h6>
+	                		<p style="text-align:center; color:#434343; font-weight:500;">Invite as many co-workers and friends to join. They can all use the same promo.</p>
+	                	</div>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="redeem">
+        <div class="redeem-body">
+            <div class="container">
+                <div class="row">
+                    <div style="vertical-align:bottom;" align="center" class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+                        <img align="center" class="img-responsive" src="{{ STATIC_URL }}img/tiltedphone.png">
+                    </div>
+                    <div align="center" style="padding-bottom:0px; margin-left:0px; " class="col-sm-6 col-md-5 col-lg-6">
+                        <img align="center" class="img-responsive" src="{{ STATIC_URL }}img/phonehead.png">
+                        <h6 style="margin-top:15px; margin-bottom:15px; color:#bb1312; text-align:center; ">How does it work?</h6>
+                        <p style="margin-top:10px; margin-bottom:17px; text-align:justify; color:#434343; font-weight:500;">1. Talk with your HR person or whoever would be putting this together, (this might be you). Have them get in touch with us.<br><br>2. Check out the Hotspot App and choose any of our partner venues. Chances are there is one near you!<br><br>3. Shoot us an email or call us and tell us when and where you want to host your company’s after-hour fun.<br><br>4. We’ll send out an email with a promo code that you can share 
+    					with everyone. Just show up and everybody’s first round is free!</p>
+	    				<a href="mailto:info@gethotspotapp.com?subject=Tell me more about Office Heroes!&body=Don’t forget to mention your name and the best way to follow up with you." target="_blank">
+                            <button class="cbtn">
+	                    	  <strong>GET IN TOUCH</strong>
+	                       </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="happyhour">
+        <div class="happyhour-body">
+            <div class="container">
+                <div class="row">
+                    <div align="center" class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" style="padding-top:50px">
+                    	<h6 style="margin-top:15px; margin-bottom:15px; font-size:22px; color:#bb1312; text-align:center; ">FAQ:</h6>
+	                	<p style="padding-top:15px; line-height:1.5; text-align:center; color:#434343;"><strong>Who is eligible for this?</strong><br>Anybody in the Seattle area!<br><br><strong>Is it really free?</strong><br>Yes! 100%.<br><br><strong>What’s the catch?</strong><br>We believe once your team uses Hotspot to find drinks at the coolest bars and at the best prices, they will love it. Therefore, we’re buying everyone their first round!<br><br><strong>Will you guys spam my office?</strong><br>No! Your privacy is important and we know you don’t need any more emails in a week. We will send you or whoever facilitates the sponsored happy hour an email with the free drink promo that can forward on.<br><br><strong>You mentioned getting free drinks for everyone that gets the app?</strong><br>Yup. If you help us get the party started, we will credit you a free drink at any Hotspot location for EVERY PERSON WHO GETS THE APP. They just need to use the promo code we will send to you. <br><br><strong>How can I get more info?</strong><br>Call us! We’d be happy to talk to your HR or director or help explain how you could get your entire company a round of drinks for free!</p>
+	                	<h5 style="color:#169aee; font-size:22px; margin-bottom:80px;">206.473.1300</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+                    <p style="font-weight:500;">Copyright &copy; 2015 Hotspot Inc. All rights reserved.</a>
+                    <br>
+                    <p style="font-weight:500;"><small>*Currently available in select cities</small></a>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-3 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+                    <p style="font-weight:500;">Contact Us:</a>
+                    <br>
+                    <a style="font-weight:500;" href="mailto:info@gethotspotapp.com" target="_blank">info@gethotspotapp.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <!-- jQuery -->
+    <script src="{{ STATIC_URL }}js/grayjquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ STATIC_URL }}js/graybootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ STATIC_URL }}js/grayjquery.easing.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+
+</body>
+    
+
+</html>

@@ -1,0 +1,91 @@
+{% extends "happy-hour-base.html" %}
+{% load happy_hour_extras %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block extrascript %}
+    <script>
+
+        function format_text(text) {
+            var updated_text = text.replace("'","27").replace("/","47").replace("-","45");
+            return updated_text;
+        }
+        $(document).ready(function(){
+
+           $('#id_city').on('change', function(){
+               var city = $('#id_city option:selected').text()
+               var day = $('#id_day option:selected').text()
+               var time = $('#id_time option:selected').text()
+               window.location = "/happy-hours/" + format_text(city) +"/None/" + day + "/" + time +"/1"
+           });
+
+           $('#id_neighborhood, #id_day, #id_time').on('change', function(){
+               var city = $('#id_city option:selected').text()
+               var neighborhood = $('#id_neighborhood option:selected').text()
+               if (neighborhood == "Select") {
+                   neighborhood = "None";
+               }
+               var day = $('#id_day option:selected').text()
+               var time = $('#id_time option:selected').text()
+               window.location = "/happy-hours/" + city +"/" + format_text(neighborhood) + "/" + day + "/" + time +"/1"
+           });
+
+        var number_in_list = $('.happy-hour-preview-container').size();
+        $('.happy-hours-on-page').html(number_in_list);
+
+        var page_number = {{ current.4 }} - 1;
+
+        $('.page-number').eq(page_number).addClass("active-page");
+
+        });
+
+        mixpanel.track("web_index_load");
+
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div id="body" class="row">
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1">
+            <h1 class="happy-hour-title-text">
+                {% if form.neighborhood.value == None %}
+                    There are <span class="bold-title">{{ total_happy_hours }} happy hours</span> in {{ current.0 }} on {{ current.1 }} {{ current.2 }}
+                {% else %}
+                    There are <span class="bold-title">{{ total_happy_hours }} happy hours</span> in {{ current.3 }}, {{ current.0 }} on {{ current.1 }} {{ current.2 }}
+                {% endif %}
+            </h1>
+            {% if happy_hours|length != 0 %}
+                <span class="number-of-happy-hours">Displaying <span class="happy-hours-on-page"></span> of {{ total_happy_hours }}:</span>
+            {% endif %}
+            <ul class="happy-hour-list">
+                {% for happy_hour in happy_hours %}
+                    <a href="/happy-hours/places/{{ happy_hour.id }}/{{ happy_hour.place.name | clean_string }}">
+                        <li class="happy-hour-preview-container">
+                            {% if happy_hour.place.image_url %}
+                                <div class="top-half" style="background-image:url('{{ happy_hour.place.large_image_url }}');">
+                            {% else %}
+                                <div class="top-half" style="background-image:url('/static/img/top-half-happy-hour-icon.png');">
+                            {% endif %}
+    {#                            <img src="{{ happy_hour.place.image_url }}">#}
+                            </div>
+                            <div class="bottom-half">
+                                <span class="place-name">{{ happy_hour.place.name }}</span>
+                                <span class="deal-description">{{ happy_hour.description }}</span>
+                            </div>
+                        </li></a>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="row pages">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1">
+                {% for page in pages %}
+                    <a class="page-number" href="/happy-hours/{{ current.0 }}/{{ current.3 }}/{{ current.1 }}/{{ current.2 }}/{{ page }}">{{ page }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
